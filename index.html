@@ -19,9 +19,10 @@
 </head>
 <body>
 
-    <!-- ===== BACKGROUND MUSIC ===== -->
+    <!-- ===== BACKGROUND MUSIC - TREAT YOU BETTER ===== -->
     <audio id="birthdaySong" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        <!-- Alternatif: jika mau pakai lagu asli, upload file MP3 dan ganti src -->
     </audio>
 
     <!-- ===== CONFETTI CONTAINER ===== -->
@@ -34,6 +35,16 @@
         <div class="balloon balloon-3">🎈</div>
         <div class="balloon balloon-4">🎈</div>
         <div class="balloon balloon-5">🎈</div>
+    </div>
+
+    <!-- ===== FLOATING LOVE HEARTS ===== -->
+    <div class="floating-hearts">
+        <span class="heart heart-1">❤️</span>
+        <span class="heart heart-2">💕</span>
+        <span class="heart heart-3">💗</span>
+        <span class="heart heart-4">❤️</span>
+        <span class="heart heart-5">💖</span>
+        <span class="heart heart-6">💝</span>
     </div>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -59,6 +70,7 @@
                                  class="rounded-circle img-fluid photo-profile" 
                                  id="profilePhoto">
                             <div class="photo-ring"></div>
+                            <div class="photo-caption">💕 My Love 💕</div>
                         </div>
 
                         <!-- Main Title -->
@@ -76,14 +88,22 @@
                             <span class="age-label">tahun</span>
                         </div>
 
+                        <!-- Love Quote -->
+                        <div class="love-quote mb-3">
+                            <i class="fas fa-heart love-quote-icon"></i>
+                            <span>"Cinta sejati tidak pernah berakhir, ia terus tumbuh setiap hari"</span>
+                            <i class="fas fa-heart love-quote-icon"></i>
+                        </div>
+
                         <!-- Message Box -->
                         <div class="message-box p-3 mb-4">
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="message-text" id="pesanUcapan">
                                 Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. 
                                 Setiap detik bersamamu adalah hadiah terindah. 
+                                Cintaku padamu tak terbatas, seperti langit di atas kita. 
                                 Semoga semua impianmu menjadi kenyataan. 
-                                I love you! 💕
+                                I love you more than anything! 💕
                             </p>
                             <i class="fas fa-quote-right quote-icon"></i>
                         </div>
@@ -128,9 +148,9 @@
                                 <i class="fas fa-music"></i> 
                                 <span id="musicBtnText">Putar Musik</span>
                             </button>
-                            <button class="btn btn-secondary btn-lg mb-2" onclick="surprise()">
-                                <i class="fas fa-gift"></i> 
-                                Kejutan!
+                            <button class="btn btn-love btn-lg mb-2" onclick="surprise()">
+                                <i class="fas fa-heart"></i> 
+                                Kejutan Cinta!
                             </button>
                         </div>
 
@@ -140,6 +160,7 @@
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 100%"></div>
                             </div>
+                            <span class="love-percent">100%</span>
                         </div>
 
                     </div>
@@ -150,24 +171,36 @@
         </div>
     </div>
 
-    <!-- ===== SURPRISE POPUP ===== -->
+    <!-- ===== SURPRISE LOVE POPUP ===== -->
     <div id="surprisePopup" class="surprise-popup" style="display:none;">
         <div class="popup-content">
             <div class="popup-header">
-                <span class="popup-emoji">🎁</span>
-                <h3>Untuk Kamu!</h3>
+                <span class="popup-emoji">💝</span>
+                <h3>Untuk Kamu, Cintaku!</h3>
             </div>
             <div class="popup-body">
-                <p id="surpriseMessage">Loading...</p>
+                <div class="popup-love-photo">
+                    <img src="https://ui-avatars.com/api/?name=❤️+Love&size=150&background=FF1493&color=fff&bold=true" 
+                         alt="Love" 
+                         class="img-fluid rounded-circle popup-photo">
+                </div>
+                <p id="surpriseMessage" class="love-message">Loading...</p>
                 <div class="popup-hearts">
                     <span>❤️</span>
                     <span>💕</span>
                     <span>💗</span>
                     <span>❤️</span>
+                    <span>💖</span>
+                    <span>💝</span>
+                </div>
+                <div class="popup-love-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <span id="loveQuote">"Cinta adalah ketika kebahagiaan orang lain lebih penting dari kebahagiaanmu sendiri"</span>
+                    <i class="fas fa-quote-right"></i>
                 </div>
             </div>
-            <button class="btn btn-primary" onclick="closeSurprise()">
-                <i class="fas fa-heart"></i> Terima Kasih
+            <button class="btn btn-love" onclick="closeSurprise()">
+                <i class="fas fa-heart"></i> Aku Cinta Kamu
             </button>
         </div>
     </div>
