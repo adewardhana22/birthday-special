@@ -1,5 +1,5 @@
 /* ============================================
-   ROOT VARIABLES - LOVE THEME
+   ROOT VARIABLES - LOVE THEME FOR CHELSI
    ============================================ */
 :root {
     --primary-pink: #FF1493;
@@ -178,7 +178,7 @@ body {
     color: white;
     padding: 4px 20px;
     border-radius: 50px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -227,7 +227,7 @@ body {
 
 .special-name {
     font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     background: linear-gradient(135deg, #fff, #FFD700, #FF69B4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -344,7 +344,7 @@ body {
 .quote-icon:last-child { float: right; margin-left: 10px; }
 
 .message-text {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 2;
     color: #fff;
     margin: 0;
@@ -354,7 +354,7 @@ body {
 }
 
 /* ============================================
-   COUNTDOWN - DETIK BERJALAN
+   COUNTDOWN
    ============================================ */
 .countdown-container {
     background: rgba(255, 255, 255, 0.12);
@@ -502,7 +502,7 @@ body {
 }
 
 /* ============================================
-   SURPRISE POPUP - PERBAIKAN TOTAL
+   SURPRISE POPUP
    ============================================ */
 #surprisePopup {
     position: fixed;
@@ -725,7 +725,7 @@ body {
    ============================================ */
 @media (max-width: 768px) {
     .birthday-title { font-size: 2.8rem; }
-    .special-name { font-size: 2.2rem; }
+    .special-name { font-size: 2rem; }
     .photo-profile { width: 130px; height: 130px; }
     .countdown-number { font-size: 1.6rem; }
     .btn-primary, .btn-love { padding: 12px 25px; font-size: 0.9rem; width: 100%; margin-right: 0 !important; }
@@ -733,7 +733,7 @@ body {
     .balloon { font-size: 2.5rem; }
     .popup-content { padding: 25px 20px; }
     .message-text { font-size: 0.95rem; }
-    .photo-caption { font-size: 0.7rem; padding: 3px 15px; bottom: -20px; }
+    .photo-caption { font-size: 0.6rem; padding: 3px 15px; bottom: -20px; }
     .love-quote span { font-size: 0.75rem; }
     .popup-emoji { font-size: 3rem; }
     .popup-header h3 { font-size: 1.4rem; }
@@ -742,7 +742,7 @@ body {
 
 @media (max-width: 480px) {
     .birthday-title { font-size: 2.2rem; }
-    .special-name { font-size: 1.8rem; }
+    .special-name { font-size: 1.6rem; }
     .countdown-number { font-size: 1.3rem; }
     .countdown-box { padding: 10px 3px; }
     .photo-profile { width: 100px; height: 100px; }
