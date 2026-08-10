@@ -1,30 +1,29 @@
 /* ============================================
-   CONFIGURATION - EDIT THIS SECTION
+   CONFIGURATION - CHELSI SAYANGKUU ❤️
    ============================================ */
 const CONFIG = {
-    namaSpesial: "Sayangku ❤️",
-    tanggalUlangTahun: "2026-10-17T00:00:00",
-    usia: 22,
-    pesanUcapan: "Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Aku akan selalu memperlakukanmu lebih baik dari siapapun. Semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
+    namaSpesial: "Chelsi Sayangkuu ❤️",
+    tanggalUlangTahun: "2026-08-10T00:00:00",
+    usia: 17,
+    pesanUcapan: "Di hari spesial ini, Chelsi sayangkuu ❤️ Aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Seperti lagu Monokrom, kamu adalah satu-satunya warna dalam hidupku. Semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
     pesanKejutan: [
-        "💖 Kamu adalah cinta sejatiku, satu-satunya yang membuat hatiku bergetar setiap hari. Aku janji akan selalu memperlakukanmu lebih baik!",
-        "💝 Setiap hari bersamamu adalah anugerah. Aku akan selalu menjagamu dan mencintaimu dengan sepenuh hati!",
-        "❤️ Kamu adalah alasan aku tersenyum setiap pagi. Aku berjanji akan selalu membuatmu bahagia!",
-        "💕 Cintaku padamu seperti bintang di langit, tak terhitung dan abadi. Aku akan selalu ada untukmu!",
-        "💗 Kamu adalah mimpiku yang menjadi nyata. Aku akan selalu memperlakukanmu seperti ratu!",
-        "💖 Tanpa kamu, hidupku terasa kosong. Aku berjanji akan selalu mencintaimu lebih dari siapapun!",
-        "💝 Cinta kita adalah kisah yang tak akan pernah usang. Aku akan selalu setia padamu!",
-        "❤️ Kamu adalah rumah bagi hatiku. Aku akan selalu melindungi dan mencintaimu!",
-        "💕 Aku janji akan selalu ada untukmu, dalam suka maupun duka. Selamat ulang tahun cintaku!",
-        "💗 Aku jatuh cinta padamu setiap hari, lagi dan lagi. Aku akan selalu memperlakukanmu lebih baik!"
+        "💖 Chelsi sayangkuu! Kamu adalah warna dalam hidupku yang monokrom. Selamat ulang tahun!",
+        "💝 Di usiamu yang ke-17 ini, aku berjanji akan selalu ada untukmu, Chelsi!",
+        "❤️ Chelsi, kamu adalah satu-satunya yang membuat hatiku berwarna. I love you!",
+        "💕 Seperti lagu Monokrom, hanya kamu yang berwarna dalam hidupku. Selamat ulang tahun sayang!",
+        "💗 Chelsi, kamu adalah hadiah terindah dalam hidupku. Selamat ulang tahun cintaku!",
+        "💖 17 tahun, segudang cinta untukmu Chelsi. Aku selalu mencintaimu!",
+        "💝 Chelsi sayangkuu, kamu adalah segalanya bagiku. Selamat ulang tahun!",
+        "❤️ Di hari spesialmu ini, aku hanya ingin mengatakan bahwa aku sangat mencintaimu Chelsi!",
+        "💕 Chelsi, kamu adalah mimpiku yang menjadi nyata. Selamat ulang tahun!",
+        "💗 Aku jatuh cinta padamu setiap hari Chelsi. Selamat ulang tahun sayangkuu!"
     ],
     loveQuotes: [
-        '"I promise I\'ll treat you better than anyone ever has"',
-        '"You deserve someone who loves you the way I do"',
-        '"I\'ll be the one who treats you right"',
-        '"You\'re the only one I see, the only one I need"',
-        '"I\'ll give you the love you deserve"',
-        '"You are my everything, my one and only"'
+        '"Dalam monokrom cinta, hanya kamu yang berwarna"',
+        '"Chelsi, kamu adalah satu-satunya warna dalam hidupku"',
+        '"Cinta untuk Chelsi tak pernah pudar, seperti lagu Monokrom"',
+        '"Kamu adalah segalanya bagiku, Chelsi sayangkuu"',
+        '"Di usiamu yang ke-17, cintaku padamu semakin dalam"'
     ]
 };
 
@@ -33,7 +32,8 @@ const CONFIG = {
    ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
     
-    console.log('✅ Website loaded!');
+    console.log('✅ Website untuk Chelsi Sayangkuu loaded!');
+    console.log('💖 Happy Birthday Chelsi!');
     
     /* ============================================
        SET CONFIG DATA
@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const secondsEl = document.getElementById('seconds');
 
         if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
-            console.log('Countdown elements not found');
             return;
         }
 
@@ -83,13 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
         secondsEl.textContent = String(seconds).padStart(2, '0');
     }
 
-    // Jalankan countdown setiap 1 detik (1000ms)
     updateCountdown();
     setInterval(updateCountdown, 1000);
-    console.log('✅ Countdown running every 1 second');
+    console.log('✅ Countdown running for Chelsi');
 
     /* ============================================
-       MUSIC PLAYER - TREAT YOU BETTER
+       MUSIC PLAYER - MONOKROM TULUS
        ============================================ */
     let isMusicPlaying = false;
     const audio = document.getElementById('birthdaySong');
@@ -105,14 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
             audio.play()
                 .then(() => {
                     isMusicPlaying = true;
-                    if (musicBtnText) musicBtnText.textContent = '⏸ Jeda Musik';
-                    showNotification('🎵 "Treat You Better" diputar! Nikmati setiap nadanya! 💕');
+                    if (musicBtnText) musicBtnText.textContent = '⏸ Jeda Monokrom';
+                    showNotification('🎵 "Monokrom" - TULUS diputar! Nikmati setiap nadanya Chelsi! 💕');
                     fireLoveConfetti();
                 })
                 .catch(function(error) {
                     console.log('Audio play error:', error);
-                    showNotification('💖 Klik lagi untuk memutar musik!');
-                    // Try one more time with user interaction
+                    showNotification('💖 Klik lagi untuk memutar Monokrom!');
                     document.addEventListener('click', function playOnClick() {
                         audio.play().catch(function() {});
                         document.removeEventListener('click', playOnClick);
@@ -121,16 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             audio.pause();
             isMusicPlaying = false;
-            if (musicBtnText) musicBtnText.textContent = '▶ Putar Musik';
-            showNotification('⏸️ Musik dijeda, tapi cintaku tetap menyala! ❤️');
+            if (musicBtnText) musicBtnText.textContent = '▶ Putar Monokrom';
+            showNotification('⏸️ Musik dijeda, tapi cintaku untuk Chelsi tetap menyala! ❤️');
         }
     };
 
     /* ============================================
-       SURPRISE LOVE FUNCTION - FIXED
+       SURPRISE LOVE FUNCTION - UNTUK CHELSI
        ============================================ */
     window.showSurprise = function() {
-        console.log('💖 Surprise button clicked!');
+        console.log('💖 Surprise untuk Chelsi!');
         
         const popup = document.getElementById('surprisePopup');
         const surpriseMessage = document.getElementById('surpriseMessage');
@@ -141,54 +138,48 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Random pesan cinta
         const randomIndex = Math.floor(Math.random() * CONFIG.pesanKejutan.length);
         const randomMessage = CONFIG.pesanKejutan[randomIndex];
         
-        // Random love quote
         const quoteIndex = Math.floor(Math.random() * CONFIG.loveQuotes.length);
         const randomQuote = CONFIG.loveQuotes[quoteIndex];
         
-        console.log('📝 Random message:', randomMessage);
-        console.log('📝 Random quote:', randomQuote);
+        console.log('📝 Pesan untuk Chelsi:', randomMessage);
         
         if (surpriseMessage) surpriseMessage.textContent = randomMessage;
         if (loveQuoteElement) loveQuoteElement.textContent = randomQuote;
         
-        // TAMPILKAN POPUP
         popup.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        console.log('✅ Popup displayed');
+        console.log('✅ Popup untuk Chelsi ditampilkan!');
         
-        // Fire love confetti
         fireLoveConfetti();
         setTimeout(function() { fireLoveConfetti(); }, 300);
         setTimeout(function() { fireLoveConfetti(); }, 600);
         setTimeout(function() { fireLoveConfetti(); }, 900);
         setTimeout(function() { fireLoveConfetti(); }, 1200);
         
-        showNotification('💖 Kejutan cinta untuk kamu! Semoga kamu suka! 💕');
+        showNotification('💖 Kejutan cinta untuk Chelsi! Semoga kamu suka sayang! 💕');
     };
 
     /* ============================================
-       CLOSE SURPRISE - FIXED
+       CLOSE SURPRISE
        ============================================ */
     window.closeSurprise = function() {
         const popup = document.getElementById('surprisePopup');
         if (popup) {
             popup.style.display = 'none';
             document.body.style.overflow = '';
-            console.log('✅ Popup closed');
+            console.log('✅ Popup ditutup');
         }
-        showNotification('💝 Aku selalu mencintaimu! 💝');
+        showNotification('💝 Aku selalu mencintaimu Chelsi! 💝');
     };
 
     /* ============================================
-       LOVE CONFETTI EFFECT
+       LOVE CONFETTI
        ============================================ */
     function fireLoveConfetti() {
         if (typeof confetti !== 'function') {
-            console.log('⚠️ Confetti library not loaded yet');
             return;
         }
         
@@ -244,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* ============================================
-       AUTO CONFETTI & MUSIC
+       AUTO CONFETTI
        ============================================ */
     setTimeout(function() {
         fireLoveConfetti();
@@ -269,10 +260,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (today.getMonth() === birthday.getMonth() && 
             today.getDate() === birthday.getDate()) {
-            showNotification('🎂 Selamat ulang tahun cintaku! Hari ini adalah harimu! 💕');
+            showNotification('🎂 Selamat ulang tahun Chelsi sayangkuu! Hari ini adalah harimu! 💕');
             setTimeout(function() { fireLoveConfetti(); }, 1000);
             setTimeout(function() { fireLoveConfetti(); }, 2000);
             setTimeout(function() { fireLoveConfetti(); }, 3000);
+            setTimeout(function() { fireLoveConfetti(); }, 4000);
         }
     }
     checkBirthdayToday();
@@ -299,8 +291,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    console.log('🎵 Music: Treat You Better');
-    console.log('💖 Surprise: Ready!');
-    console.log('⏰ Countdown: Running every second');
+    console.log('🎵 Music: Monokrom - TULUS untuk Chelsi');
+    console.log('💖 Surprise: Untuk Chelsi Sayangkuu!');
+    console.log('⏰ Countdown: Menuju hari bahagia Chelsi');
 
 });
