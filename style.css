@@ -627,4 +627,219 @@ body {
 .popup-subtitle {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.95rem;
-    margin-top:
+    margin-top: 5px;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.popup-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border: 4px solid #FFD700;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    margin: 10px 0;
+    transition: transform 0.5s ease;
+}
+
+.popup-photo:hover {
+    transform: scale(1.05) rotate(-5deg);
+}
+
+.love-message {
+    font-size: 1.4rem !important;
+    line-height: 2.2 !important;
+    color: #FFD700 !important;
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: 400 !important;
+    margin: 20px 0 !important;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.popup-hearts {
+    font-size: 2.5rem;
+    margin: 18px 0;
+    animation: heartFloat 2s ease-in-out infinite;
+}
+
+@keyframes heartFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.popup-hearts span {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.popup-hearts span:nth-child(1) { animation-delay: 0s; }
+.popup-hearts span:nth-child(2) { animation-delay: 0.15s; }
+.popup-hearts span:nth-child(3) { animation-delay: 0.3s; }
+.popup-hearts span:nth-child(4) { animation-delay: 0.45s; }
+.popup-hearts span:nth-child(5) { animation-delay: 0.6s; }
+.popup-hearts span:nth-child(6) { animation-delay: 0.75s; }
+.popup-hearts span:nth-child(7) { animation-delay: 0.9s; }
+.popup-hearts span:nth-child(8) { animation-delay: 1.05s; }
+
+.popup-love-quote {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 25px;
+    padding: 18px;
+    margin: 15px 0;
+    border-left: 3px solid #FFD700;
+    border-right: 3px solid #FFD700;
+}
+
+.popup-love-quote i {
+    color: #FFD700;
+    opacity: 0.3;
+    font-size: 1.1rem;
+}
+
+.popup-love-quote span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-style: italic;
+    padding: 0 12px;
+    font-weight: 300;
+}
+
+.popup-age-badge {
+    background: linear-gradient(135deg, #FFD700, #FFE44D);
+    padding: 10px 30px;
+    border-radius: 60px;
+    display: inline-block;
+    margin: 12px 0;
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+}
+
+.popup-age-badge span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+.popup-content .btn-love {
+    margin-top: 18px;
+    padding: 16px 50px;
+    font-size: 1.05rem;
+}
+
+/* ============================================
+   BALLOONS
+   ============================================ */
+.balloons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+    font-size: 4.5rem;
+    animation: balloonFloat 14s ease-in-out infinite;
+    filter: drop-shadow(0 15px 50px rgba(0, 0, 0, 0.2));
+}
+
+.balloon-1 { left: 2%; animation-delay: 0s; }
+.balloon-2 { left: 12%; animation-delay: 2s; }
+.balloon-3 { left: 25%; animation-delay: 4s; }
+.balloon-4 { right: 25%; animation-delay: 1s; }
+.balloon-5 { right: 12%; animation-delay: 3s; }
+
+@keyframes balloonFloat {
+    0% { transform: translateY(100vh) rotate(0deg) scale(0.4); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(720deg) scale(1.6); opacity: 0; }
+}
+
+/* ============================================
+   CONFETTI
+   ============================================ */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* ============================================
+   NOTIFICATION
+   ============================================ */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(30px);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 60px;
+    z-index: 10000;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUpNotif 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 1rem;
+    max-width: 92%;
+    text-align: center;
+    font-weight: 300;
+}
+
+@keyframes slideUpNotif {
+    from { transform: translateX(-50%) translateY(150px); opacity: 0; }
+    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .birthday-title { font-size: 3.2rem; }
+    .special-name { font-size: 2.2rem; }
+    .photo-profile { width: 150px; height: 150px; }
+    .countdown-number { font-size: 2rem; }
+    .btn-primary, .btn-love { 
+        padding: 14px 30px; 
+        font-size: 0.9rem; 
+        width: 100%; 
+        margin-right: 0 !important; 
+    }
+    .button-group { display: flex; flex-direction: column; gap: 15px; }
+    .balloon { font-size: 3rem; }
+    .popup-content { padding: 30px 20px; }
+    .message-text { font-size: 0.95rem; }
+    .photo-caption { font-size: 0.7rem; padding: 4px 20px; bottom: -24px; }
+    .love-quote span { font-size: 0.85rem; }
+    .popup-emoji { font-size: 3.5rem; }
+    .popup-header h3 { font-size: 1.7rem; }
+    .love-message { font-size: 1.2rem !important; }
+    .popup-photo { width: 110px; height: 110px; }
+    .age-number { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+    .birthday-title { font-size: 2.5rem; }
+    .special-name { font-size: 1.7rem; }
+    .countdown-number { font-size: 1.5rem; }
+    .countdown-box { padding: 12px 3px; }
+    .photo-profile { width: 120px; height: 120px; }
+    .age-number { font-size: 1.8rem; }
+    .popup-photo { width: 90px; height: 90px; }
+    .popup-hearts { font-size: 1.8rem; }
+    .popup-content { padding: 25px 15px; }
+    .notification { font-size: 0.8rem; padding: 12px 20px; }
+    .popup-close { width: 35px; height: 35px; font-size: 1.2rem; }
+    .btn-primary, .btn-love { font-size: 0.8rem; padding: 12px 20px; }
+}
