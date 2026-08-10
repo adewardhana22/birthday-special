@@ -2,42 +2,29 @@
    CONFIGURATION - EDIT THIS SECTION
    ============================================ */
 const CONFIG = {
-    // Nama orang spesial
     namaSpesial: "Sayangku ❤️",
-    
-    // Tanggal ulang tahun (YYYY-MM-DDTHH:mm:ss)
-    tanggalUlangTahun: "2026-10-27T00:00:60",
-    
-    // Usia yang dirayakan
+    tanggalUlangTahun: "2026-08-10T00:00:00",
     usia: 22,
-    
-    // Pesan ucapan utama
-    pesanUcapan: "Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Cintaku padamu tak terbatas, seperti langit di atas kita. Semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
-    
-    // Kumpulan pesan kejutan cinta
+    pesanUcapan: "Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Aku akan selalu memperlakukanmu lebih baik dari siapapun. Semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
     pesanKejutan: [
-        "💖 Kamu adalah cinta sejatiku, satu-satunya yang membuat hatiku bergetar setiap hari. Selamat ulang tahun sayang!",
-        "💝 Setiap hari bersamamu adalah anugerah. Terima kasih telah menjadi bagian dari hidupku. Aku mencintaimu!",
-        "❤️ Kamu adalah alasan aku tersenyum setiap pagi. Selamat ulang tahun untuk cintaku!",
-        "💕 Cintaku padamu seperti bintang di langit, tak terhitung dan abadi. Selamat ulang tahun!",
-        "💗 Kamu adalah mimpiku yang menjadi nyata. Aku bersyukur memiliki kamu. I love you!",
-        "💖 Tanpa kamu, hidupku terasa kosong. Kamu adalah segalanya bagiku. Selamat ulang tahun!",
-        "💝 Cinta kita adalah kisah yang tak akan pernah usang. Selamat ulang tahun untuk belahan jiwaku!",
-        "❤️ Kamu adalah rumah bagi hatiku. Dimana pun aku berada, aku selalu merindukanmu. I love you!",
-        "💕 Di hari spesial ini, aku hanya ingin mengatakan bahwa aku sangat mencintaimu. Kamu adalah segalanya!",
-        "💗 Aku jatuh cinta padamu setiap hari, lagi dan lagi. Selamat ulang tahun cintaku!"
+        "💖 Kamu adalah cinta sejatiku, satu-satunya yang membuat hatiku bergetar setiap hari. Aku janji akan selalu memperlakukanmu lebih baik!",
+        "💝 Setiap hari bersamamu adalah anugerah. Aku akan selalu menjagamu dan mencintaimu dengan sepenuh hati!",
+        "❤️ Kamu adalah alasan aku tersenyum setiap pagi. Aku berjanji akan selalu membuatmu bahagia!",
+        "💕 Cintaku padamu seperti bintang di langit, tak terhitung dan abadi. Aku akan selalu ada untukmu!",
+        "💗 Kamu adalah mimpiku yang menjadi nyata. Aku akan selalu memperlakukanmu seperti ratu!",
+        "💖 Tanpa kamu, hidupku terasa kosong. Aku berjanji akan selalu mencintaimu lebih dari siapapun!",
+        "💝 Cinta kita adalah kisah yang tak akan pernah usang. Aku akan selalu setia padamu!",
+        "❤️ Kamu adalah rumah bagi hatiku. Aku akan selalu melindungi dan mencintaimu!",
+        "💕 Aku janji akan selalu ada untukmu, dalam suka maupun duka. Selamat ulang tahun cintaku!",
+        "💗 Aku jatuh cinta padamu setiap hari, lagi dan lagi. Aku akan selalu memperlakukanmu lebih baik!"
     ],
-    
-    // Kumpulan kutipan cinta untuk popup
     loveQuotes: [
-        '"Cinta sejati adalah ketika kebahagiaan orang lain lebih penting dari kebahagiaanmu sendiri"',
-        '"Cinta bukan tentang menemukan orang yang sempurna, tapi tentang melihat ketidaksempurnaan dengan sempurna"',
-        '"Aku mencintaimu bukan karena siapa dirimu, tapi karena siapa aku saat bersamamu"',
-        '"Cinta adalah ketika dua orang saling melengkapi, bukan saling memiliki"',
-        '"Jatuh cinta itu mudah, tapi tetap bertahan dalam cinta adalah pilihan"',
-        '"Kamu adalah jawaban dari semua doaku. Aku mencintaimu lebih dari apapun"',
-        '"Cinta adalah bahasa yang dimengerti oleh hati, bukan oleh kata-kata"',
-        '"Dalam setiap detik bersamamu, aku menemukan alasan baru untuk mencintaimu"'
+        '"I promise I\'ll treat you better than anyone ever has"',
+        '"You deserve someone who loves you the way I do"',
+        '"I\'ll be the one who treats you right"',
+        '"You\'re the only one I see, the only one I need"',
+        '"I\'ll give you the love you deserve"',
+        '"You are my everything, my one and only"'
     ]
 };
 
@@ -45,6 +32,8 @@ const CONFIG = {
    WAIT FOR DOM READY
    ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
+    
+    console.log('✅ Website loaded!');
     
     /* ============================================
        SET CONFIG DATA
@@ -58,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ageElement) ageElement.textContent = CONFIG.usia;
 
     /* ============================================
-       COUNTDOWN TIMER
+       COUNTDOWN TIMER - DETIK BERJALAN
        ============================================ */
     function updateCountdown() {
         const targetDate = new Date(CONFIG.tanggalUlangTahun).getTime();
@@ -70,14 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutesEl = document.getElementById('minutes');
         const secondsEl = document.getElementById('seconds');
 
-        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+            console.log('Countdown elements not found');
+            return;
+        }
 
         if (distance < 0) {
             daysEl.textContent = '🎉';
             hoursEl.textContent = '🎉';
             minutesEl.textContent = '🎉';
             secondsEl.textContent = '🎉';
-            showNotification('🎉 Selamat ulang tahun cintaku! Semoga harimu penuh kebahagiaan! 💕');
             return;
         }
 
@@ -92,17 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
         secondsEl.textContent = String(seconds).padStart(2, '0');
     }
 
+    // Jalankan countdown setiap 1 detik (1000ms)
     updateCountdown();
     setInterval(updateCountdown, 1000);
+    console.log('✅ Countdown running every 1 second');
 
     /* ============================================
-       MUSIC PLAYER - FIXED
+       MUSIC PLAYER - TREAT YOU BETTER
        ============================================ */
     let isMusicPlaying = false;
     const audio = document.getElementById('birthdaySong');
     const musicBtnText = document.getElementById('musicBtnText');
 
-    // Make playMusic globally accessible
     window.playMusic = function() {
         if (!audio) {
             showNotification('⚠️ Audio tidak ditemukan!');
@@ -114,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(() => {
                     isMusicPlaying = true;
                     if (musicBtnText) musicBtnText.textContent = '⏸ Jeda Musik';
-                    showNotification('🎵 Musik cinta diputar! Nikmati setiap nadanya! 💕');
+                    showNotification('🎵 "Treat You Better" diputar! Nikmati setiap nadanya! 💕');
                     fireLoveConfetti();
                 })
                 .catch(function(error) {
                     console.log('Audio play error:', error);
-                    showNotification('💖 Klik lagi untuk memutar musik cinta!');
-                    // Try to play with user interaction
+                    showNotification('💖 Klik lagi untuk memutar musik!');
+                    // Try one more time with user interaction
                     document.addEventListener('click', function playOnClick() {
                         audio.play().catch(function() {});
                         document.removeEventListener('click', playOnClick);
@@ -138,33 +130,37 @@ document.addEventListener('DOMContentLoaded', function() {
        SURPRISE LOVE FUNCTION - FIXED
        ============================================ */
     window.showSurprise = function() {
+        console.log('💖 Surprise button clicked!');
+        
         const popup = document.getElementById('surprisePopup');
         const surpriseMessage = document.getElementById('surpriseMessage');
         const loveQuoteElement = document.getElementById('loveQuote');
         
         if (!popup) {
-            console.error('Popup not found!');
+            console.error('❌ Popup not found!');
             return;
         }
         
         // Random pesan cinta
-        const randomMessage = CONFIG.pesanKejutan[
-            Math.floor(Math.random() * CONFIG.pesanKejutan.length)
-        ];
+        const randomIndex = Math.floor(Math.random() * CONFIG.pesanKejutan.length);
+        const randomMessage = CONFIG.pesanKejutan[randomIndex];
         
         // Random love quote
-        const randomQuote = CONFIG.loveQuotes[
-            Math.floor(Math.random() * CONFIG.loveQuotes.length)
-        ];
+        const quoteIndex = Math.floor(Math.random() * CONFIG.loveQuotes.length);
+        const randomQuote = CONFIG.loveQuotes[quoteIndex];
+        
+        console.log('📝 Random message:', randomMessage);
+        console.log('📝 Random quote:', randomQuote);
         
         if (surpriseMessage) surpriseMessage.textContent = randomMessage;
         if (loveQuoteElement) loveQuoteElement.textContent = randomQuote;
         
-        // Show popup
+        // TAMPILKAN POPUP
         popup.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scroll
+        document.body.style.overflow = 'hidden';
+        console.log('✅ Popup displayed');
         
-        // Fire multiple love confetti
+        // Fire love confetti
         fireLoveConfetti();
         setTimeout(function() { fireLoveConfetti(); }, 300);
         setTimeout(function() { fireLoveConfetti(); }, 600);
@@ -181,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const popup = document.getElementById('surprisePopup');
         if (popup) {
             popup.style.display = 'none';
-            document.body.style.overflow = ''; // Restore scroll
+            document.body.style.overflow = '';
+            console.log('✅ Popup closed');
         }
         showNotification('💝 Aku selalu mencintaimu! 💝');
     };
@@ -191,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
        ============================================ */
     function fireLoveConfetti() {
         if (typeof confetti !== 'function') {
-            console.log('Confetti library not loaded yet');
+            console.log('⚠️ Confetti library not loaded yet');
             return;
         }
         
@@ -213,21 +210,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     particleCount: 40,
                     spread: 50,
                     origin: { y: 0.5 },
-                    colors: ['#FF1493', '#FF69B4'],
+                    colors: ['#FF1493', '#FF69B4', '#FFD700'],
                     startVelocity: 20,
                     gravity: 0.5
                 });
-            }, 100);
+            }, 150);
         } catch(e) {
             console.log('Confetti error:', e);
         }
     }
 
     /* ============================================
-       SHOW NOTIFICATION - FIXED
+       NOTIFICATION
        ============================================ */
     function showNotification(message) {
-        // Remove old notification
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
         
@@ -248,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /* ============================================
-       AUTO LOVE CONFETTI ON LOAD
+       AUTO CONFETTI & MUSIC
        ============================================ */
     setTimeout(function() {
         fireLoveConfetti();
@@ -264,9 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.removeEventListener('click', initAudio);
     }, { once: true });
     
-    // Check if birthday is today
-    checkBirthdayToday();
-
     /* ============================================
        CHECK BIRTHDAY TODAY
        ============================================ */
@@ -276,12 +269,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (today.getMonth() === birthday.getMonth() && 
             today.getDate() === birthday.getDate()) {
-            showNotification('🎂 Selamat ulang tahun cintaku! Hari ini adalah harimu yang istimewa! 💕');
+            showNotification('🎂 Selamat ulang tahun cintaku! Hari ini adalah harimu! 💕');
             setTimeout(function() { fireLoveConfetti(); }, 1000);
             setTimeout(function() { fireLoveConfetti(); }, 2000);
             setTimeout(function() { fireLoveConfetti(); }, 3000);
         }
     }
+    checkBirthdayToday();
 
     /* ============================================
        KEYBOARD SHORTCUTS
@@ -305,15 +299,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    /* ============================================
-       CONSOLE WELCOME
-       ============================================ */
-    console.log('%c💖 Happy Birthday My Love! 💖', 'font-size: 30px; font-weight: bold; color: #FF1493;');
-    console.log('%c❤️ Made with love for someone special ❤️', 'font-size: 16px; color: #FF69B4;');
-    console.log('%c💕 You are my everything! 💕', 'font-size: 20px; color: #FFD700;');
-    
-    console.log('✅ Website loaded successfully!');
-    console.log('🎵 Click the music button to play');
-    console.log('💖 Click the surprise button for love messages');
+    console.log('🎵 Music: Treat You Better');
+    console.log('💖 Surprise: Ready!');
+    console.log('⏰ Countdown: Running every second');
 
 });
