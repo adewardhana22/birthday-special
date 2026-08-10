@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Happy Birthday Sayang! 🎉</title>
+    <title>🎉 Happy Birthday Chelsi Sayangkuu! 🎉</title>
     
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,10 +19,13 @@
 </head>
 <body>
 
-    <!-- ===== BACKGROUND MUSIC - TREAT YOU BETTER ===== -->
+    <!-- ===== BACKGROUND MUSIC - MONOKROM TULUS ===== -->
     <audio id="birthdaySong" loop preload="auto">
-    <source src="treat-you-better-chorus.mp3" type="audio/mpeg">
-</audio>
+        <!-- TULUS - Monokrom -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        <!-- Backup source -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- ===== CONFETTI CONTAINER ===== -->
     <div id="confetti-container"></div>
@@ -64,12 +67,12 @@
 
                         <!-- Profile Photo -->
                         <div class="photo-frame mb-4">
-                            <img src="https://ui-avatars.com/api/?name=❤️+Special+Person&size=200&background=FF1493&color=fff&bold=true&font-size=0.5" 
-                                 alt="Foto Spesial" 
+                            <img src="https://ui-avatars.com/api/?name=Chelsi&size=200&background=FF1493&color=fff&bold=true&font-size=0.6" 
+                                 alt="Foto Chelsi" 
                                  class="rounded-circle img-fluid photo-profile" 
                                  id="profilePhoto">
                             <div class="photo-ring"></div>
-                            <div class="photo-caption">💕 My Love 💕</div>
+                            <div class="photo-caption">💕 Chelsi Sayangkuu 💕</div>
                         </div>
 
                         <!-- Main Title -->
@@ -79,18 +82,18 @@
                         </h1>
                         
                         <!-- Special Name -->
-                        <h2 class="special-name mb-3" id="namaSpesial">Untuk Kamu ❤️</h2>
+                        <h2 class="special-name mb-3" id="namaSpesial">Chelsi Sayangkuu ❤️</h2>
 
                         <!-- Age Display -->
                         <div class="age-display mb-4">
-                            <span class="age-number" id="ageDisplay">22</span>
+                            <span class="age-number" id="ageDisplay">17</span>
                             <span class="age-label">tahun</span>
                         </div>
 
-                        <!-- Love Quote -->
+                        <!-- Love Quote - Monokrom -->
                         <div class="love-quote mb-3">
                             <i class="fas fa-heart love-quote-icon"></i>
-                            <span>"I promise I'll treat you better than anyone ever has"</span>
+                            <span>"Dalam monokrom cinta, hanya kamu yang berwarna"</span>
                             <i class="fas fa-heart love-quote-icon"></i>
                         </div>
 
@@ -98,10 +101,11 @@
                         <div class="message-box p-3 mb-4">
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="message-text" id="pesanUcapan">
-                                Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. 
-                                Setiap detik bersamamu adalah hadiah terindah. 
-                                Aku akan selalu memperlakukanmu lebih baik dari siapapun. 
-                                Semoga semua impianmu menjadi kenyataan. 
+                                Di hari spesial ini, Chelsi sayangkuu ❤️
+                                Aku ingin kamu tahu betapa berartinya kamu bagiku.
+                                Setiap detik bersamamu adalah hadiah terindah.
+                                Seperti lagu Monokrom, kamu adalah satu-satunya warna dalam hidupku.
+                                Semoga semua impianmu menjadi kenyataan.
                                 I love you more than anything! 💕
                             </p>
                             <i class="fas fa-quote-right quote-icon"></i>
@@ -145,7 +149,7 @@
                         <div class="button-group">
                             <button class="btn btn-primary btn-lg me-2 mb-2" id="musicBtn" onclick="playMusic()">
                                 <i class="fas fa-music"></i> 
-                                <span id="musicBtnText">▶ Putar Musik</span>
+                                <span id="musicBtnText">▶ Putar Monokrom</span>
                             </button>
                             <button class="btn btn-love btn-lg mb-2" id="surpriseBtn" onclick="showSurprise()">
                                 <i class="fas fa-heart"></i> 
@@ -155,7 +159,7 @@
 
                         <!-- Love Meter -->
                         <div class="love-meter mt-4">
-                            <span class="love-label">💖 Cintaku padamu ♾️</span>
+                            <span class="love-label">💖 Cintaku untuk Chelsi ♾️</span>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 100%"></div>
                             </div>
@@ -176,12 +180,12 @@
             <div class="popup-content" onclick="event.stopPropagation()">
                 <div class="popup-header">
                     <span class="popup-emoji">💝</span>
-                    <h3>Untuk Kamu, Cintaku!</h3>
+                    <h3>Untuk Chelsi, Cintaku!</h3>
                 </div>
                 <div class="popup-body">
                     <div class="popup-love-photo">
-                        <img src="https://ui-avatars.com/api/?name=❤️+Love&size=150&background=FF1493&color=fff&bold=true" 
-                             alt="Love" 
+                        <img src="https://ui-avatars.com/api/?name=Chelsi&size=150&background=FF1493&color=fff&bold=true" 
+                             alt="Chelsi" 
                              class="img-fluid rounded-circle popup-photo">
                     </div>
                     <p id="surpriseMessage" class="love-message">Loading...</p>
@@ -195,12 +199,12 @@
                     </div>
                     <div class="popup-love-quote">
                         <i class="fas fa-quote-left"></i>
-                        <span id="loveQuote">"I promise I'll treat you better than anyone ever has"</span>
+                        <span id="loveQuote">"Dalam monokrom cinta, hanya kamu yang berwarna"</span>
                         <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
                 <button class="btn btn-love" onclick="closeSurprise()">
-                    <i class="fas fa-heart"></i> Aku Cinta Kamu
+                    <i class="fas fa-heart"></i> Aku Cinta Chelsi
                 </button>
             </div>
         </div>
