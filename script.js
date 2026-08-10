@@ -6,7 +6,7 @@ const CONFIG = {
     namaSpesial: "Sayangku ❤️",
     
     // Tanggal ulang tahun (YYYY-MM-DDTHH:mm:ss)
-    tanggalUlangTahun: "2026-08-10T00:00:00",
+    tanggalUlangTahun: "2026-10-27T00:00:60",
     
     // Usia yang dirayakan
     usia: 22,
