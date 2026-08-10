@@ -19,14 +19,12 @@
 </head>
 <body>
 
-    <!-- ===== BACKGROUND MUSIC - MULTIPLE SOURCES ===== -->
+    <!-- ===== BACKGROUND MUSIC - TREAT YOU BETTER ===== -->
     <audio id="birthdaySong" loop preload="auto">
-        <!-- Sumber 1: SoundHelix -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        <!-- Sumber 2: Alternatif -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-        <!-- Sumber 3: Fallback -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+        <!-- Shawn Mendes - Treat You Better (Instrumental/Cover) -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+        <!-- Backup source -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
     </audio>
 
     <!-- ===== CONFETTI CONTAINER ===== -->
@@ -95,7 +93,7 @@
                         <!-- Love Quote -->
                         <div class="love-quote mb-3">
                             <i class="fas fa-heart love-quote-icon"></i>
-                            <span>"Cinta sejati tidak pernah berakhir, ia terus tumbuh setiap hari"</span>
+                            <span>"I promise I'll treat you better than anyone ever has"</span>
                             <i class="fas fa-heart love-quote-icon"></i>
                         </div>
 
@@ -105,7 +103,7 @@
                             <p class="message-text" id="pesanUcapan">
                                 Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. 
                                 Setiap detik bersamamu adalah hadiah terindah. 
-                                Cintaku padamu tak terbatas, seperti langit di atas kita. 
+                                Aku akan selalu memperlakukanmu lebih baik dari siapapun. 
                                 Semoga semua impianmu menjadi kenyataan. 
                                 I love you more than anything! 💕
                             </p>
@@ -148,11 +146,11 @@
 
                         <!-- Action Buttons -->
                         <div class="button-group">
-                            <button class="btn btn-primary btn-lg me-2 mb-2" onclick="playMusic()" id="musicBtn">
+                            <button class="btn btn-primary btn-lg me-2 mb-2" id="musicBtn" onclick="playMusic()">
                                 <i class="fas fa-music"></i> 
                                 <span id="musicBtnText">▶ Putar Musik</span>
                             </button>
-                            <button class="btn btn-love btn-lg mb-2" onclick="showSurprise()" id="surpriseBtn">
+                            <button class="btn btn-love btn-lg mb-2" id="surpriseBtn" onclick="showSurprise()">
                                 <i class="fas fa-heart"></i> 
                                 💖 Kejutan Cinta!
                             </button>
@@ -177,8 +175,8 @@
 
     <!-- ===== SURPRISE LOVE POPUP ===== -->
     <div id="surprisePopup" style="display:none;">
-        <div class="popup-overlay">
-            <div class="popup-content">
+        <div class="popup-overlay" onclick="closeSurprise()">
+            <div class="popup-content" onclick="event.stopPropagation()">
                 <div class="popup-header">
                     <span class="popup-emoji">💝</span>
                     <h3>Untuk Kamu, Cintaku!</h3>
@@ -200,7 +198,7 @@
                     </div>
                     <div class="popup-love-quote">
                         <i class="fas fa-quote-left"></i>
-                        <span id="loveQuote">"Cinta adalah ketika kebahagiaan orang lain lebih penting dari kebahagiaanmu sendiri"</span>
+                        <span id="loveQuote">"I promise I'll treat you better than anyone ever has"</span>
                         <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
