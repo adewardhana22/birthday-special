@@ -19,12 +19,10 @@
 </head>
 <body>
 
-    <!-- ===== BACKGROUND MUSIC - MONOKROM TULUS ===== -->
+    <!-- ===== BACKGROUND MUSIC - I LOVE YOU 3000 ===== -->
     <audio id="birthdaySong" loop preload="auto">
-        <!-- TULUS - Monokrom -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg">
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
-        <!-- Backup source -->
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
     </audio>
 
     <!-- ===== CONFETTI CONTAINER ===== -->
@@ -39,7 +37,7 @@
         <div class="balloon balloon-5">🎈</div>
     </div>
 
-    <!-- ===== FLOATING LOVE HEARTS ===== -->
+    <!-- ===== FLOATING HEARTS ===== -->
     <div class="floating-hearts">
         <span class="heart heart-1">❤️</span>
         <span class="heart heart-2">💕</span>
@@ -47,6 +45,8 @@
         <span class="heart heart-4">❤️</span>
         <span class="heart heart-5">💖</span>
         <span class="heart heart-6">💝</span>
+        <span class="heart heart-7">💕</span>
+        <span class="heart heart-8">❤️</span>
     </div>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -63,16 +63,17 @@
                             <span class="star">⭐</span>
                             <span class="star">✨</span>
                             <span class="star">🌟</span>
+                            <span class="star">⭐</span>
                         </div>
 
                         <!-- Profile Photo -->
                         <div class="photo-frame mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Chelsi+Putri+Rahmadani&size=200&background=FF1493&color=fff&bold=true&font-size=0.45" 
-                                 alt="Foto Chelsi Putri Rahmadani" 
+                            <img src="https://ui-avatars.com/api/?name=Chelsi+Putri+Rahmadani&size=200&background=FF1493&color=fff&bold=true&font-size=0.4" 
+                                 alt="Chelsi Putri Rahmadani" 
                                  class="rounded-circle img-fluid photo-profile" 
                                  id="profilePhoto">
                             <div class="photo-ring"></div>
-                            <div class="photo-caption">💕 Chelsi Putri Rahmadani 💕</div>
+                            <div class="photo-caption">💕 My Everything 💕</div>
                         </div>
 
                         <!-- Main Title -->
@@ -90,10 +91,10 @@
                             <span class="age-label">tahun</span>
                         </div>
 
-                        <!-- Love Quote - Monokrom -->
+                        <!-- Romantic Quote -->
                         <div class="love-quote mb-3">
                             <i class="fas fa-heart love-quote-icon"></i>
-                            <span>"Dalam monokrom cinta, hanya kamu yang berwarna"</span>
+                            <span>"I love you 3000, Chelsi. You're my everything"</span>
                             <i class="fas fa-heart love-quote-icon"></i>
                         </div>
 
@@ -101,12 +102,14 @@
                         <div class="message-box p-3 mb-4">
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="message-text" id="pesanUcapan">
-                                Di hari spesial ini, Chelsi Putri Rahmadani ❤️
-                                Aku ingin kamu tahu betapa berartinya kamu bagiku.
-                                Setiap detik bersamamu adalah hadiah terindah.
-                                Seperti lagu Monokrom, kamu adalah satu-satunya warna dalam hidupku.
-                                Di usiamu yang ke-17 ini, semoga semua impianmu menjadi kenyataan.
-                                I love you more than anything! 💕
+                                Untuk Chelsi Putri Rahmadani ❤️
+                                <br><br>
+                                Di hari yang istimewa ini, aku ingin kamu tahu bahwa kamu adalah hadiah terindah dalam hidupku. 
+                                Setiap detik bersamamu adalah kenangan yang tak ternilai. 
+                                Seperti kata-kata "I Love You 3000", cintaku padamu jauh lebih dari itu. 
+                                Di usiamu yang ke-17 ini, semoga semua impian dan harapanmu menjadi kenyataan.
+                                <br><br>
+                                I love you more than 3000! 💕
                             </p>
                             <i class="fas fa-quote-right quote-icon"></i>
                         </div>
@@ -147,13 +150,13 @@
 
                         <!-- Action Buttons -->
                         <div class="button-group">
-                            <button class="btn btn-primary btn-lg me-2 mb-2" id="musicBtn" onclick="playMusic()">
+                            <button class="btn btn-primary btn-lg me-2 mb-2" onclick="playMusic()">
                                 <i class="fas fa-music"></i> 
-                                <span id="musicBtnText">▶ Putar Monokrom</span>
+                                <span id="musicBtnText">🎵 Putar Lagu</span>
                             </button>
-                            <button class="btn btn-love btn-lg mb-2" id="surpriseBtn" onclick="showSurprise()">
-                                <i class="fas fa-heart"></i> 
-                                💖 Kejutan Cinta!
+                            <button class="btn btn-love btn-lg mb-2" onclick="showSurprise()">
+                                <i class="fas fa-gift"></i> 
+                                🎁 Kejutan Spesial!
                             </button>
                         </div>
 
@@ -163,7 +166,7 @@
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 100%"></div>
                             </div>
-                            <span class="love-percent">100%</span>
+                            <span class="love-percent">∞ Tak Terbatas</span>
                         </div>
 
                     </div>
@@ -174,21 +177,27 @@
         </div>
     </div>
 
-    <!-- ===== SURPRISE LOVE POPUP ===== -->
+    <!-- ===== SURPRISE POPUP - PREMIUM ===== -->
     <div id="surprisePopup" style="display:none;">
         <div class="popup-overlay" onclick="closeSurprise()">
             <div class="popup-content" onclick="event.stopPropagation()">
+                <button class="popup-close" onclick="closeSurprise()">✕</button>
+                
                 <div class="popup-header">
                     <span class="popup-emoji">💝</span>
                     <h3>Untuk Chelsi, Cintaku!</h3>
+                    <div class="popup-subtitle">🎂 Selamat Ulang Tahun ke-17 🎂</div>
                 </div>
+                
                 <div class="popup-body">
                     <div class="popup-love-photo">
-                        <img src="https://ui-avatars.com/api/?name=Chelsi+Putri+Rahmadani&size=150&background=FF1493&color=fff&bold=true&font-size=0.4" 
-                             alt="Chelsi Putri Rahmadani" 
+                        <img src="https://ui-avatars.com/api/?name=Chelsi+Putri+Rahmadani&size=150&background=FF1493&color=fff&bold=true&font-size=0.35" 
+                             alt="Chelsi" 
                              class="img-fluid rounded-circle popup-photo">
                     </div>
+                    
                     <p id="surpriseMessage" class="love-message">Loading...</p>
+                    
                     <div class="popup-hearts">
                         <span>❤️</span>
                         <span>💕</span>
@@ -196,13 +205,20 @@
                         <span>❤️</span>
                         <span>💖</span>
                         <span>💝</span>
+                        <span>❤️</span>
                     </div>
+                    
                     <div class="popup-love-quote">
                         <i class="fas fa-quote-left"></i>
-                        <span id="loveQuote">"Dalam monokrom cinta, hanya kamu yang berwarna"</span>
+                        <span id="loveQuote">"I love you 3000, Chelsi. You're my everything"</span>
                         <i class="fas fa-quote-right"></i>
                     </div>
+                    
+                    <div class="popup-age-badge">
+                        <span>✨ 17 Tahun Penuh Cinta ✨</span>
+                    </div>
                 </div>
+                
                 <button class="btn btn-love" onclick="closeSurprise()">
                     <i class="fas fa-heart"></i> Aku Cinta Chelsi
                 </button>
