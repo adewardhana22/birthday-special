@@ -19,10 +19,14 @@
 </head>
 <body>
 
-    <!-- ===== BACKGROUND MUSIC - TREAT YOU BETTER ===== -->
+    <!-- ===== BACKGROUND MUSIC - MULTIPLE SOURCES ===== -->
     <audio id="birthdaySong" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
-        <!-- Alternatif: jika mau pakai lagu asli, upload file MP3 dan ganti src -->
+        <!-- Sumber 1: SoundHelix -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <!-- Sumber 2: Alternatif -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+        <!-- Sumber 3: Fallback -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
     </audio>
 
     <!-- ===== CONFETTI CONTAINER ===== -->
@@ -144,13 +148,13 @@
 
                         <!-- Action Buttons -->
                         <div class="button-group">
-                            <button class="btn btn-primary btn-lg me-2 mb-2" onclick="playMusic()">
+                            <button class="btn btn-primary btn-lg me-2 mb-2" onclick="playMusic()" id="musicBtn">
                                 <i class="fas fa-music"></i> 
-                                <span id="musicBtnText">Putar Musik</span>
+                                <span id="musicBtnText">▶ Putar Musik</span>
                             </button>
-                            <button class="btn btn-love btn-lg mb-2" onclick="surprise()">
+                            <button class="btn btn-love btn-lg mb-2" onclick="showSurprise()" id="surpriseBtn">
                                 <i class="fas fa-heart"></i> 
-                                Kejutan Cinta!
+                                💖 Kejutan Cinta!
                             </button>
                         </div>
 
@@ -172,36 +176,38 @@
     </div>
 
     <!-- ===== SURPRISE LOVE POPUP ===== -->
-    <div id="surprisePopup" class="surprise-popup" style="display:none;">
-        <div class="popup-content">
-            <div class="popup-header">
-                <span class="popup-emoji">💝</span>
-                <h3>Untuk Kamu, Cintaku!</h3>
+    <div id="surprisePopup" style="display:none;">
+        <div class="popup-overlay">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <span class="popup-emoji">💝</span>
+                    <h3>Untuk Kamu, Cintaku!</h3>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-love-photo">
+                        <img src="https://ui-avatars.com/api/?name=❤️+Love&size=150&background=FF1493&color=fff&bold=true" 
+                             alt="Love" 
+                             class="img-fluid rounded-circle popup-photo">
+                    </div>
+                    <p id="surpriseMessage" class="love-message">Loading...</p>
+                    <div class="popup-hearts">
+                        <span>❤️</span>
+                        <span>💕</span>
+                        <span>💗</span>
+                        <span>❤️</span>
+                        <span>💖</span>
+                        <span>💝</span>
+                    </div>
+                    <div class="popup-love-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <span id="loveQuote">"Cinta adalah ketika kebahagiaan orang lain lebih penting dari kebahagiaanmu sendiri"</span>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                </div>
+                <button class="btn btn-love" onclick="closeSurprise()">
+                    <i class="fas fa-heart"></i> Aku Cinta Kamu
+                </button>
             </div>
-            <div class="popup-body">
-                <div class="popup-love-photo">
-                    <img src="https://ui-avatars.com/api/?name=❤️+Love&size=150&background=FF1493&color=fff&bold=true" 
-                         alt="Love" 
-                         class="img-fluid rounded-circle popup-photo">
-                </div>
-                <p id="surpriseMessage" class="love-message">Loading...</p>
-                <div class="popup-hearts">
-                    <span>❤️</span>
-                    <span>💕</span>
-                    <span>💗</span>
-                    <span>❤️</span>
-                    <span>💖</span>
-                    <span>💝</span>
-                </div>
-                <div class="popup-love-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <span id="loveQuote">"Cinta adalah ketika kebahagiaan orang lain lebih penting dari kebahagiaanmu sendiri"</span>
-                    <i class="fas fa-quote-right"></i>
-                </div>
-            </div>
-            <button class="btn btn-love" onclick="closeSurprise()">
-                <i class="fas fa-heart"></i> Aku Cinta Kamu
-            </button>
         </div>
     </div>
 
