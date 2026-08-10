@@ -1,5 +1,5 @@
 /* ============================================
-   ROOT VARIABLES - PREMIUM THEME
+   ROOT VARIABLES - LOVE THEME
    ============================================ */
 :root {
     --primary-pink: #FF1493;
@@ -9,10 +9,10 @@
     --gold: #FFD700;
     --gold-light: #FFE44D;
     --rose-gold: #E8A87C;
+    --love-red: #FF0040;
     --shadow-color: rgba(255, 20, 147, 0.4);
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-love: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-romance: linear-gradient(135deg, #FF1493, #FF69B4, #FF1493);
     --glass-bg: rgba(255, 255, 255, 0.12);
     --glass-border: rgba(255, 255, 255, 0.25);
 }
@@ -25,7 +25,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--gradient-2);
+    background: var(--gradient-love);
     min-height: 100vh;
     background-attachment: fixed;
     overflow-x: hidden;
@@ -33,7 +33,42 @@ body {
 }
 
 /* ============================================
-   BIRTHDAY CARD - GLASSMORPHISM
+   FLOATING HEARTS
+   ============================================ */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatHeart 15s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+.heart-1 { left: 5%; animation-delay: 0s; font-size: 2.5rem; }
+.heart-2 { left: 15%; animation-delay: 2s; font-size: 1.8rem; }
+.heart-3 { left: 30%; animation-delay: 4s; font-size: 3rem; }
+.heart-4 { left: 50%; animation-delay: 1s; font-size: 2rem; }
+.heart-5 { right: 30%; animation-delay: 3s; font-size: 2.8rem; }
+.heart-6 { right: 15%; animation-delay: 5s; font-size: 1.5rem; }
+
+@keyframes floatHeart {
+    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.3; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+}
+
+/* ============================================
+   BIRTHDAY CARD - GLASSMORPHISM LOVE
    ============================================ */
 .birthday-card {
     background: var(--glass-bg);
@@ -43,7 +78,8 @@ body {
     box-shadow: 
         0 30px 80px rgba(0, 0, 0, 0.4),
         0 0 60px rgba(255, 20, 147, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 100px rgba(255, 0, 64, 0.1);
     border: 1px solid var(--glass-border);
     animation: floatCard 4s ease-in-out infinite;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
@@ -52,7 +88,7 @@ body {
     overflow: hidden;
 }
 
-/* Background Glow Effect */
+/* Background Glow Effect - Love */
 .birthday-card::before {
     content: '';
     position: absolute;
@@ -60,8 +96,9 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.1), transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.08), transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.15), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 0, 64, 0.1), transparent 50%),
+                radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.05), transparent 40%);
     animation: glowMove 8s ease-in-out infinite;
     pointer-events: none;
 }
@@ -75,7 +112,8 @@ body {
     transform: scale(1.02) translateY(-10px);
     box-shadow: 
         0 40px 100px rgba(0, 0, 0, 0.5),
-        0 0 80px rgba(255, 20, 147, 0.3);
+        0 0 80px rgba(255, 20, 147, 0.3),
+        0 0 120px rgba(255, 0, 64, 0.2);
 }
 
 @keyframes floatCard {
@@ -118,7 +156,7 @@ body {
 }
 
 /* ============================================
-   PROFILE PHOTO - LUXURY
+   PROFILE PHOTO - LOVE STYLE
    ============================================ */
 .photo-frame {
     position: relative;
@@ -132,7 +170,8 @@ body {
     border: 4px solid rgba(255, 255, 255, 0.8);
     box-shadow: 
         0 0 40px rgba(255, 20, 147, 0.4),
-        0 0 80px rgba(255, 20, 147, 0.2);
+        0 0 80px rgba(255, 20, 147, 0.2),
+        0 0 120px rgba(255, 0, 64, 0.1);
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     z-index: 2;
@@ -146,7 +185,25 @@ body {
         0 0 120px rgba(255, 20, 147, 0.3);
 }
 
-/* Animated Ring */
+.photo-caption {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 20, 147, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 4px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.3);
+    z-index: 3;
+}
+
+/* Animated Ring - Love */
 .photo-ring {
     position: absolute;
     top: -12px;
@@ -156,12 +213,13 @@ body {
     border-radius: 50%;
     background: conic-gradient(
         from 0deg,
-        var(--gold),
-        var(--primary-pink),
-        var(--secondary-pink),
-        var(--gold),
-        var(--primary-pink),
-        var(--gold)
+        #FF1493,
+        #FF69B4,
+        #FFD700,
+        #FF1493,
+        #FF69B4,
+        #FFD700,
+        #FF1493
     );
     animation: ringSpin 4s linear infinite;
     z-index: 1;
@@ -176,7 +234,7 @@ body {
 }
 
 /* ============================================
-   TITLES - GRADIENT TEXT
+   TITLES - LOVE GRADIENT
    ============================================ */
 .birthday-title {
     font-family: 'Dancing Script', cursive;
@@ -198,7 +256,7 @@ body {
 .special-name {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    background: linear-gradient(135deg, #fff, #FFD700);
+    background: linear-gradient(135deg, #fff, #FFD700, #FF69B4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pulseName 2s ease-in-out infinite;
@@ -209,6 +267,42 @@ body {
 @keyframes pulseName {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.08); }
+}
+
+/* ============================================
+   LOVE QUOTE
+   ============================================ */
+.love-quote {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.love-quote-icon {
+    color: var(--love-red);
+    font-size: 1rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+}
+
+.love-quote span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    font-style: italic;
+    font-weight: 300;
 }
 
 /* ============================================
@@ -257,7 +351,7 @@ body {
 }
 
 /* ============================================
-   MESSAGE BOX - LUXURY
+   MESSAGE BOX - LOVE STYLE
    ============================================ */
 .message-box {
     background: rgba(255, 255, 255, 0.15);
@@ -347,7 +441,7 @@ body {
 }
 
 /* ============================================
-   BUTTONS - LUXURY
+   BUTTONS - LOVE STYLE
    ============================================ */
 .btn-primary {
     background: linear-gradient(135deg, #FF1493, #FF69B4, #FF1493);
@@ -376,8 +470,8 @@ body {
     color: #fff;
 }
 
-.btn-secondary {
-    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+.btn-love {
+    background: linear-gradient(135deg, #FF0040, #FF1493, #FF0040);
     background-size: 200% 200%;
     border: none;
     padding: 14px 35px;
@@ -385,16 +479,17 @@ body {
     font-weight: 600;
     color: #fff;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 10px 40px rgba(255, 0, 64, 0.4);
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: buttonShimmer 3s ease-in-out infinite 0.5s;
 }
 
-.btn-secondary:hover {
+.btn-love:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.6);
+    box-shadow: 0 15px 50px rgba(255, 0, 64, 0.6);
     color: #fff;
+    background: linear-gradient(135deg, #FF1493, #FF0040);
 }
 
 /* ============================================
@@ -403,6 +498,7 @@ body {
 .love-meter {
     max-width: 350px;
     margin: 0 auto;
+    position: relative;
 }
 
 .love-label {
@@ -433,8 +529,16 @@ body {
     50% { opacity: 0.8; transform: scaleX(0.98); }
 }
 
+.love-percent {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
 /* ============================================
-   SURPRISE POPUP - LUXURY
+   SURPRISE POPUP - LOVE THEME
    ============================================ */
 .surprise-popup {
     position: fixed;
@@ -442,7 +546,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
@@ -464,7 +568,7 @@ body {
     width: 90%;
     text-align: center;
     animation: bounceInPopup 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 20, 147, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -477,7 +581,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.1), transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.15), transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 0, 64, 0.1), transparent 50%);
     animation: glowMove 8s ease-in-out infinite;
     pointer-events: none;
 }
@@ -506,11 +611,31 @@ body {
     font-size: 2rem;
 }
 
+.popup-love-photo {
+    margin: 15px 0;
+}
+
+.popup-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
 .popup-body p {
     font-size: 1.2rem;
     line-height: 2;
     color: #fff;
     font-weight: 300;
+    margin: 15px 0;
+}
+
+.love-message {
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    color: var(--gold) !important;
+    font-family: 'Dancing Script', cursive !important;
 }
 
 .popup-hearts {
@@ -526,15 +651,39 @@ body {
 
 .popup-hearts span {
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 5px;
 }
 
 .popup-hearts span:nth-child(2) { animation-delay: 0.2s; }
 .popup-hearts span:nth-child(3) { animation-delay: 0.4s; }
 .popup-hearts span:nth-child(4) { animation-delay: 0.6s; }
+.popup-hearts span:nth-child(5) { animation-delay: 0.8s; }
+.popup-hearts span:nth-child(6) { animation-delay: 1s; }
+
+.popup-love-quote {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+}
+
+.popup-love-quote i {
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 1rem;
+}
+
+.popup-love-quote span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: 0 10px;
+}
 
 /* ============================================
-   BALLOONS - LUXURY
+   BALLOONS - LOVE STYLE
    ============================================ */
 .balloons {
     position: fixed;
@@ -542,139 +691,4 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.balloon {
-    position: absolute;
-    font-size: 3.5rem;
-    animation: balloonFloat 10s ease-in-out infinite;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-}
-
-.balloon-1 { left: 3%; animation-delay: 0s; }
-.balloon-2 { left: 18%; animation-delay: 1.5s; }
-.balloon-3 { right: 18%; animation-delay: 3s; }
-.balloon-4 { right: 3%; animation-delay: 4.5s; }
-.balloon-5 { left: 50%; animation-delay: 2.5s; }
-
-@keyframes balloonFloat {
-    0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-100vh) rotate(720deg) scale(1.5); opacity: 0; }
-}
-
-/* ============================================
-   CONFETTI
-   ============================================ */
-#confetti-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 999;
-}
-
-/* ============================================
-   NOTIFICATION
-   ============================================ */
-.notification {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-    color: white;
-    padding: 18px 35px;
-    border-radius: 50px;
-    z-index: 1000;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    animation: slideUpNotif 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.95rem;
-}
-
-@keyframes slideUpNotif {
-    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-    to { transform: translateX(-50%) translateY(0); opacity: 1; }
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 768px) {
-    .birthday-title {
-        font-size: 2.8rem;
-    }
-    
-    .special-name {
-        font-size: 2.2rem;
-    }
-    
-    .photo-profile {
-        width: 130px;
-        height: 130px;
-    }
-    
-    .countdown-number {
-        font-size: 1.6rem;
-    }
-    
-    .btn-primary, .btn-secondary {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-        width: 100%;
-        margin-right: 0 !important;
-    }
-    
-    .button-group {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .balloon {
-        font-size: 2.5rem;
-    }
-    
-    .popup-content {
-        padding: 30px 20px;
-    }
-    
-    .message-text {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .birthday-title {
-        font-size: 2.2rem;
-    }
-    
-    .special-name {
-        font-size: 1.8rem;
-    }
-    
-    .countdown-number {
-        font-size: 1.3rem;
-    }
-    
-    .countdown-box {
-        padding: 10px 3px;
-    }
-    
-    .photo-profile {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .age-number {
-        font-size: 1.6rem;
-    }
-}
+    pointer-events: none
