@@ -684,4 +684,57 @@ body {
    NOTIFICATION
    ============================================ */
 .notification {
-    position: fixed
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    z-index: 10000;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUpNotif 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    max-width: 90%;
+    text-align: center;
+}
+
+@keyframes slideUpNotif {
+    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+    to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .birthday-title { font-size: 2.8rem; }
+    .special-name { font-size: 2.2rem; }
+    .photo-profile { width: 130px; height: 130px; }
+    .countdown-number { font-size: 1.6rem; }
+    .btn-primary, .btn-love { padding: 12px 25px; font-size: 0.9rem; width: 100%; margin-right: 0 !important; }
+    .button-group { display: flex; flex-direction: column; gap: 12px; }
+    .balloon { font-size: 2.5rem; }
+    .popup-content { padding: 25px 20px; }
+    .message-text { font-size: 0.95rem; }
+    .photo-caption { font-size: 0.7rem; padding: 3px 15px; bottom: -20px; }
+    .love-quote span { font-size: 0.75rem; }
+    .popup-emoji { font-size: 3rem; }
+    .popup-header h3 { font-size: 1.4rem; }
+    .love-message { font-size: 1rem !important; }
+}
+
+@media (max-width: 480px) {
+    .birthday-title { font-size: 2.2rem; }
+    .special-name { font-size: 1.8rem; }
+    .countdown-number { font-size: 1.3rem; }
+    .countdown-box { padding: 10px 3px; }
+    .photo-profile { width: 100px; height: 100px; }
+    .age-number { font-size: 1.6rem; }
+    .popup-photo { width: 80px; height: 80px; }
+    .popup-hearts { font-size: 1.5rem; }
+}
