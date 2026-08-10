@@ -29,7 +29,7 @@ const CONFIG = {
 };
 
 /* ============================================
-   WAIT FOR DOM READY
+   DOM READY
    ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('📅 27 Oktober 2026');
     
     /* ============================================
-       SET CONFIG DATA
+       SET DATA
        ============================================ */
     const namaElement = document.getElementById('namaSpesial');
     const pesanElement = document.getElementById('pesanUcapan');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ageElement) ageElement.textContent = CONFIG.usia;
 
     /* ============================================
-       COUNTDOWN TIMER
+       COUNTDOWN
        ============================================ */
     function updateCountdown() {
         const targetDate = new Date(CONFIG.tanggalUlangTahun).getTime();
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateCountdown, 1000);
 
     /* ============================================
-       MUSIC PLAYER - I LOVE YOU 3000
+       MUSIC
        ============================================ */
     let isMusicPlaying = false;
     const audio = document.getElementById('birthdaySong');
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     /* ============================================
-       SURPRISE LOVE FUNCTION - PREMIUM
+       SURPRISE - SPEKTAKULER
        ============================================ */
     window.showSurprise = function() {
         const popup = document.getElementById('surprisePopup');
@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.display = 'block';
         document.body.style.overflow = 'hidden';
         
-        // Massive confetti
-        for (let i = 0; i < 8; i++) {
+        // Massive confetti - 15 bursts
+        for (let i = 0; i < 15; i++) {
             setTimeout(function() { 
                 fireLoveConfetti(); 
-            }, i * 250);
+            }, i * 200);
         }
         
         showNotification('💖 Kejutan cinta untuk Chelsi! Semoga kamu suka sayang! 💕');
@@ -166,43 +166,43 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     /* ============================================
-       LOVE CONFETTI - PREMIUM
+       CONFETTI
        ============================================ */
     function fireLoveConfetti() {
         if (typeof confetti !== 'function') return;
         
-        const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF0040', '#FF6B6B', '#FFB6C1', '#FFE4E1', '#FF4500'];
+        const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF0040', '#FF6B6B', '#FFB6C1', '#FFE4E1', '#FF4500', '#FF6348'];
         
         try {
             confetti({
-                particleCount: 100,
-                spread: 90,
+                particleCount: 120,
+                spread: 100,
                 origin: { y: 0.6 },
                 colors: colors,
-                startVelocity: 35,
-                gravity: 0.7,
-                scalar: 1.3
+                startVelocity: 40,
+                gravity: 0.6,
+                scalar: 1.4
             });
             
             setTimeout(function() {
                 confetti({
-                    particleCount: 50,
-                    spread: 60,
+                    particleCount: 60,
+                    spread: 70,
                     origin: { y: 0.4 },
                     colors: ['#FF1493', '#FFD700', '#FF69B4'],
-                    startVelocity: 25,
-                    gravity: 0.5
+                    startVelocity: 30,
+                    gravity: 0.4
                 });
             }, 150);
             
             setTimeout(function() {
                 confetti({
-                    particleCount: 30,
-                    spread: 50,
+                    particleCount: 40,
+                    spread: 60,
                     origin: { y: 0.7 },
-                    colors: ['#FF0040', '#FFD700'],
-                    startVelocity: 20,
-                    gravity: 0.6
+                    colors: ['#FF0040', '#FFD700', '#FF1493'],
+                    startVelocity: 25,
+                    gravity: 0.5
                 });
             }, 300);
         } catch(e) {}
@@ -226,27 +226,30 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 if (notification.parentNode) notification.remove();
             }, 500);
-        }, 3500);
+        }, 4000);
     }
 
     /* ============================================
-       AUTO CONFETTI ON LOAD
+       AUTO CONFETTI
        ============================================ */
     setTimeout(function() {
         fireLoveConfetti();
-        setTimeout(function() { fireLoveConfetti(); }, 600);
-        setTimeout(function() { fireLoveConfetti(); }, 1200);
-        setTimeout(function() { fireLoveConfetti(); }, 1800);
+        setTimeout(function() { fireLoveConfetti(); }, 500);
+        setTimeout(function() { fireLoveConfetti(); }, 1000);
+        setTimeout(function() { fireLoveConfetti(); }, 1500);
+        setTimeout(function() { fireLoveConfetti(); }, 2000);
     }, 500);
     
-    // Auto play music with user interaction
+    /* ============================================
+       AUTO MUSIC
+       ============================================ */
     document.addEventListener('click', function initAudio() {
         if (audio) audio.play().catch(function() {});
         document.removeEventListener('click', initAudio);
     }, { once: true });
     
     /* ============================================
-       CHECK BIRTHDAY TODAY
+       CHECK BIRTHDAY
        ============================================ */
     function checkBirthdayToday() {
         const today = new Date();
@@ -255,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (today.getMonth() === birthday.getMonth() && 
             today.getDate() === birthday.getDate()) {
             showNotification('🎂 Selamat ulang tahun Chelsi Putri Rahmadani! Hari ini adalah harimu! 💕');
-            for (let i = 0; i < 10; i++) {
-                setTimeout(function() { fireLoveConfetti(); }, i * 500);
+            for (let i = 0; i < 15; i++) {
+                setTimeout(function() { fireLoveConfetti(); }, i * 400);
             }
         }
     }
