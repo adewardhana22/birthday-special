@@ -1,13 +1,13 @@
 /* ============================================
-   CONFIGURATION - CHELSI SAYANGKUU ❤️
+   CONFIGURATION - CHELSI PUTRI RAHMADANI ❤️
    ============================================ */
 const CONFIG = {
-    namaSpesial: "Chelsi Sayangkuu ❤️",
-    tanggalUlangTahun: "2026-08-10T00:00:00",
+    namaSpesial: "Chelsi Putri Rahmadani ❤️",
+    tanggalUlangTahun: "2026-10-27T00:00:00",
     usia: 17,
-    pesanUcapan: "Di hari spesial ini, Chelsi sayangkuu ❤️ Aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Seperti lagu Monokrom, kamu adalah satu-satunya warna dalam hidupku. Semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
+    pesanUcapan: "Di hari spesial ini, Chelsi Putri Rahmadani ❤️ Aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Seperti lagu Monokrom, kamu adalah satu-satunya warna dalam hidupku. Di usiamu yang ke-17 ini, semoga semua impianmu menjadi kenyataan. I love you more than anything! 💕",
     pesanKejutan: [
-        "💖 Chelsi sayangkuu! Kamu adalah warna dalam hidupku yang monokrom. Selamat ulang tahun!",
+        "💖 Chelsi Putri Rahmadani! Kamu adalah warna dalam hidupku yang monokrom. Selamat ulang tahun!",
         "💝 Di usiamu yang ke-17 ini, aku berjanji akan selalu ada untukmu, Chelsi!",
         "❤️ Chelsi, kamu adalah satu-satunya yang membuat hatiku berwarna. I love you!",
         "💕 Seperti lagu Monokrom, hanya kamu yang berwarna dalam hidupku. Selamat ulang tahun sayang!",
@@ -32,8 +32,10 @@ const CONFIG = {
    ============================================ */
 document.addEventListener('DOMContentLoaded', function() {
     
-    console.log('✅ Website untuk Chelsi Sayangkuu loaded!');
+    console.log('✅ Website untuk Chelsi Putri Rahmadani loaded!');
     console.log('💖 Happy Birthday Chelsi!');
+    console.log('🎂 Usia: 17 tahun');
+    console.log('📅 Tanggal: 27 Oktober 2026');
     
     /* ============================================
        SET CONFIG DATA
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-    console.log('✅ Countdown running for Chelsi');
+    console.log('✅ Countdown running untuk Chelsi');
 
     /* ============================================
        MUSIC PLAYER - MONOKROM TULUS
@@ -127,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
        SURPRISE LOVE FUNCTION - UNTUK CHELSI
        ============================================ */
     window.showSurprise = function() {
-        console.log('💖 Surprise untuk Chelsi!');
+        console.log('💖 Surprise untuk Chelsi Putri Rahmadani!');
         
         const popup = document.getElementById('surprisePopup');
         const surpriseMessage = document.getElementById('surpriseMessage');
@@ -260,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (today.getMonth() === birthday.getMonth() && 
             today.getDate() === birthday.getDate()) {
-            showNotification('🎂 Selamat ulang tahun Chelsi sayangkuu! Hari ini adalah harimu! 💕');
+            showNotification('🎂 Selamat ulang tahun Chelsi Putri Rahmadani! Hari ini adalah harimu! 💕');
             setTimeout(function() { fireLoveConfetti(); }, 1000);
             setTimeout(function() { fireLoveConfetti(); }, 2000);
             setTimeout(function() { fireLoveConfetti(); }, 3000);
@@ -292,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     console.log('🎵 Music: Monokrom - TULUS untuk Chelsi');
-    console.log('💖 Surprise: Untuk Chelsi Sayangkuu!');
-    console.log('⏰ Countdown: Menuju hari bahagia Chelsi');
+    console.log('💖 Surprise: Untuk Chelsi Putri Rahmadani!');
+    console.log('⏰ Countdown: Menuju 27 Oktober 2026');
 
 });
