@@ -1,5 +1,5 @@
 /* ============================================
-   ROOT VARIABLES - LOVE THEME FOR CHELSI
+   ROOT VARIABLES - PREMIUM THEME
    ============================================ */
 :root {
     --primary-pink: #FF1493;
@@ -9,10 +9,11 @@
     --gold: #FFD700;
     --gold-light: #FFE44D;
     --love-red: #FF0040;
-    --shadow-color: rgba(255, 20, 147, 0.4);
-    --gradient-love: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --glass-bg: rgba(255, 255, 255, 0.12);
-    --glass-border: rgba(255, 255, 255, 0.25);
+    --shadow-color: rgba(255, 20, 147, 0.5);
+    --gradient-love: linear-gradient(135deg, #FF1493, #FF69B4, #FF1493);
+    --gradient-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #FF1493 100%);
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-border: rgba(255, 255, 255, 0.20);
 }
 
 * {
@@ -23,7 +24,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--gradient-love);
+    background: var(--gradient-bg);
     min-height: 100vh;
     background-attachment: fixed;
     overflow-x: hidden;
@@ -31,7 +32,7 @@ body {
 }
 
 /* ============================================
-   FLOATING HEARTS
+   FLOATING HEARTS - MORE HEARTS
    ============================================ */
 .floating-hearts {
     position: fixed;
@@ -46,40 +47,41 @@ body {
 
 .heart {
     position: absolute;
-    font-size: 2rem;
     animation: floatHeart 15s ease-in-out infinite;
-    opacity: 0.3;
+    opacity: 0.25;
 }
 
-.heart-1 { left: 5%; animation-delay: 0s; font-size: 2.5rem; }
-.heart-2 { left: 15%; animation-delay: 2s; font-size: 1.8rem; }
-.heart-3 { left: 30%; animation-delay: 4s; font-size: 3rem; }
-.heart-4 { left: 50%; animation-delay: 1s; font-size: 2rem; }
-.heart-5 { right: 30%; animation-delay: 3s; font-size: 2.8rem; }
-.heart-6 { right: 15%; animation-delay: 5s; font-size: 1.5rem; }
+.heart-1 { left: 3%; animation-delay: 0s; font-size: 2.5rem; }
+.heart-2 { left: 10%; animation-delay: 1.5s; font-size: 1.8rem; }
+.heart-3 { left: 20%; animation-delay: 3s; font-size: 3rem; }
+.heart-4 { left: 35%; animation-delay: 0.5s; font-size: 2rem; }
+.heart-5 { left: 50%; animation-delay: 2s; font-size: 2.8rem; }
+.heart-6 { right: 30%; animation-delay: 4s; font-size: 2rem; }
+.heart-7 { right: 15%; animation-delay: 1s; font-size: 2.5rem; }
+.heart-8 { right: 5%; animation-delay: 3.5s; font-size: 1.8rem; }
 
 @keyframes floatHeart {
-    0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.3; }
-    90% { opacity: 0.3; }
+    0% { transform: translateY(100vh) scale(0.3) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.25; }
+    90% { opacity: 0.25; }
     100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
 }
 
 /* ============================================
-   BIRTHDAY CARD
+   BIRTHDAY CARD - PREMIUM GLASS
    ============================================ */
 .birthday-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 40px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 50px;
     box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.4),
-        0 0 60px rgba(255, 20, 147, 0.2),
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 20, 147, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
     border: 1px solid var(--glass-border);
     animation: floatCard 4s ease-in-out infinite;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     z-index: 10;
     overflow: hidden;
@@ -92,27 +94,29 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.15), transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(255, 0, 64, 0.1), transparent 50%);
-    animation: glowMove 8s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 20, 147, 0.15), transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.08), transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.05), transparent 40%);
+    animation: glowMove 10s ease-in-out infinite;
     pointer-events: none;
 }
 
 @keyframes glowMove {
     0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(10%, 10%) rotate(5deg); }
+    33% { transform: translate(5%, -5%) rotate(2deg); }
+    66% { transform: translate(-5%, 5%) rotate(-2deg); }
 }
 
 .birthday-card:hover {
-    transform: scale(1.02) translateY(-10px);
+    transform: scale(1.03) translateY(-12px);
     box-shadow: 
-        0 40px 100px rgba(0, 0, 0, 0.5),
-        0 0 80px rgba(255, 20, 147, 0.3);
+        0 50px 120px rgba(0, 0, 0, 0.6),
+        0 0 80px rgba(255, 20, 147, 0.4);
 }
 
 @keyframes floatCard {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-18px); }
 }
 
 /* ============================================
@@ -120,31 +124,38 @@ body {
    ============================================ */
 .decorative-stars {
     position: absolute;
-    top: -15px;
+    top: -18px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 45px;
     pointer-events: none;
 }
 
 .star {
-    font-size: 2rem;
-    animation: sparkle 3s ease-in-out infinite;
+    font-size: 2.2rem;
+    animation: sparkle 3.5s ease-in-out infinite;
 }
 
 .star:nth-child(1) { animation-delay: 0s; }
-.star:nth-child(2) { animation-delay: 0.5s; }
-.star:nth-child(3) { animation-delay: 1s; }
+.star:nth-child(2) { animation-delay: 0.7s; }
+.star:nth-child(3) { animation-delay: 1.4s; }
+.star:nth-child(4) { animation-delay: 2.1s; }
 
 @keyframes sparkle {
-    0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.5; }
-    50% { transform: rotate(180deg) scale(1.3); opacity: 1; }
+    0%, 100% { 
+        transform: rotate(0deg) scale(1);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: rotate(180deg) scale(1.4);
+        opacity: 1;
+    }
 }
 
 /* ============================================
-   PROFILE PHOTO
+   PROFILE PHOTO - PREMIUM
    ============================================ */
 .photo-frame {
     position: relative;
@@ -152,53 +163,58 @@ body {
 }
 
 .photo-profile {
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 40px rgba(255, 20, 147, 0.4), 0 0 80px rgba(255, 20, 147, 0.2);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 0 50px rgba(255, 20, 147, 0.5),
+        0 0 100px rgba(255, 20, 147, 0.2);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     z-index: 2;
     border-radius: 50%;
 }
 
 .photo-profile:hover {
-    transform: scale(1.08) rotate(-3deg);
-    box-shadow: 0 0 60px rgba(255, 20, 147, 0.6), 0 0 120px rgba(255, 20, 147, 0.3);
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 
+        0 0 70px rgba(255, 20, 147, 0.7),
+        0 0 140px rgba(255, 20, 147, 0.3);
 }
 
 .photo-caption {
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 20, 147, 0.8);
+    background: linear-gradient(135deg, #FF1493, #FF69B4);
     backdrop-filter: blur(10px);
     color: white;
-    padding: 4px 20px;
+    padding: 5px 25px;
     border-radius: 50px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     white-space: nowrap;
-    box-shadow: 0 4px 20px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 6px 30px rgba(255, 20, 147, 0.4);
     z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .photo-ring {
     position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, #FF1493, #FF69B4, #FFD700, #FF1493);
-    animation: ringSpin 4s linear infinite;
+    background: conic-gradient(from 0deg, #FF1493, #FF69B4, #FFD700, #FF1493, #FF69B4, #FFD700, #FF1493);
+    animation: ringSpin 5s linear infinite;
     z-index: 1;
-    padding: 4px;
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
-    mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
+    padding: 5px;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #fff calc(100% - 4px));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #fff calc(100% - 4px));
 }
 
 @keyframes ringSpin {
@@ -207,17 +223,17 @@ body {
 }
 
 /* ============================================
-   TITLES
+   TITLES - PREMIUM
    ============================================ */
 .birthday-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
+    font-size: 4.2rem;
     background: linear-gradient(135deg, #FFD700, #FF69B4, #FF1493, #FFD700);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shimmer 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 30px rgba(255, 20, 147, 0.3));
+    filter: drop-shadow(0 0 40px rgba(255, 20, 147, 0.4));
 }
 
 @keyframes shimmer {
@@ -227,12 +243,12 @@ body {
 
 .special-name {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     background: linear-gradient(135deg, #fff, #FFD700, #FF69B4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: pulseName 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+    animation: pulseName 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
 }
 
 @keyframes pulseName {
@@ -244,47 +260,48 @@ body {
    LOVE QUOTE
    ============================================ */
 .love-quote {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 12px 25px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .love-quote-icon {
-    color: var(--love-red);
-    font-size: 1rem;
+    color: #FF1493;
+    font-size: 1.2rem;
     animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
     0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.2); }
+    25% { transform: scale(1.3); }
     50% { transform: scale(1); }
-    75% { transform: scale(1.1); }
+    75% { transform: scale(1.15); }
 }
 
 .love-quote span {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
     font-style: italic;
     font-weight: 300;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
-   AGE DISPLAY
+   AGE DISPLAY - PREMIUM
    ============================================ */
 .age-display {
     display: inline-block;
     background: linear-gradient(135deg, #FFD700, #FFE44D);
-    padding: 8px 30px;
+    padding: 10px 35px;
     border-radius: 50px;
-    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -296,8 +313,8 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
-    animation: shineEffect 3s ease-in-out infinite;
+    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+    animation: shineEffect 4s ease-in-out infinite;
 }
 
 @keyframes shineEffect {
@@ -306,7 +323,7 @@ body {
 }
 
 .age-number {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
     position: relative;
@@ -314,7 +331,7 @@ body {
 }
 
 .age-label {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #fff;
     margin-left: 5px;
     position: relative;
@@ -322,104 +339,106 @@ body {
 }
 
 /* ============================================
-   MESSAGE BOX
+   MESSAGE BOX - PREMIUM
    ============================================ */
 .message-box {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     position: relative;
-    padding: 25px !important;
+    padding: 30px !important;
 }
 
 .quote-icon {
     color: #FFD700;
-    font-size: 1.5rem;
-    opacity: 0.6;
+    font-size: 1.8rem;
+    opacity: 0.5;
 }
 
-.quote-icon:first-child { float: left; margin-right: 10px; }
-.quote-icon:last-child { float: right; margin-left: 10px; }
+.quote-icon:first-child { float: left; margin-right: 12px; }
+.quote-icon:last-child { float: right; margin-left: 12px; }
 
 .message-text {
-    font-size: 1rem;
-    line-height: 2;
+    font-size: 1.05rem;
+    line-height: 2.1;
     color: #fff;
     margin: 0;
-    text-align: justify;
+    text-align: center;
     font-weight: 300;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
-   COUNTDOWN
+   COUNTDOWN - PREMIUM
    ============================================ */
 .countdown-container {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 25px 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .countdown-label {
     color: #fff;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
 }
 
 .countdown-box {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 15px 5px;
+    border-radius: 25px;
+    padding: 18px 5px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .countdown-box:hover {
-    transform: translateY(-8px) scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px) scale(1.06);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 .countdown-number {
     display: block;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
 }
 
 .countdown-label-small {
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS - PREMIUM
    ============================================ */
 .btn-primary {
     background: linear-gradient(135deg, #FF1493, #FF69B4, #FF1493);
     background-size: 200% 200%;
     border: none;
-    padding: 14px 35px;
-    border-radius: 50px;
+    padding: 16px 40px;
+    border-radius: 60px;
     font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 10px 40px rgba(255, 20, 147, 0.4);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 12px 50px rgba(255, 20, 147, 0.5);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: #fff;
     animation: buttonShimmer 3s ease-in-out infinite;
+    font-size: 0.95rem;
 }
 
 @keyframes buttonShimmer {
@@ -428,8 +447,8 @@ body {
 }
 
 .btn-primary:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(255, 20, 147, 0.6);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(255, 20, 147, 0.7);
     background: linear-gradient(135deg, #FF69B4, #FF1493);
     color: #fff;
 }
@@ -438,26 +457,27 @@ body {
     background: linear-gradient(135deg, #FF0040, #FF1493, #FF0040);
     background-size: 200% 200%;
     border: none;
-    padding: 14px 35px;
-    border-radius: 50px;
+    padding: 16px 40px;
+    border-radius: 60px;
     font-weight: 600;
     color: #fff;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 10px 40px rgba(255, 0, 64, 0.4);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 12px 50px rgba(255, 0, 64, 0.5);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     animation: buttonShimmer 3s ease-in-out infinite 0.5s;
+    font-size: 0.95rem;
 }
 
 .btn-love:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(255, 0, 64, 0.6);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(255, 0, 64, 0.7);
     color: #fff;
     background: linear-gradient(135deg, #FF1493, #FF0040);
 }
 
 /* ============================================
-   LOVE METER
+   LOVE METER - PREMIUM
    ============================================ */
 .love-meter {
     max-width: 350px;
@@ -466,43 +486,44 @@ body {
 }
 
 .love-label {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #fff;
     font-weight: 600;
     display: block;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 
 .progress {
-    height: 12px;
+    height: 14px;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     overflow: hidden;
 }
 
 .progress-bar {
     background: linear-gradient(90deg, #FF1493, #FF69B4, #FFD700);
     border-radius: 50px;
-    animation: lovePulse 2s ease-in-out infinite;
+    animation: lovePulse 2.5s ease-in-out infinite;
     width: 100%;
 }
 
 @keyframes lovePulse {
     0%, 100% { opacity: 1; transform: scaleX(1); }
-    50% { opacity: 0.8; transform: scaleX(0.98); }
+    50% { opacity: 0.7; transform: scaleX(0.97); }
 }
 
 .love-percent {
     display: block;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.7rem;
-    margin-top: 5px;
-    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    margin-top: 6px;
+    letter-spacing: 3px;
+    font-weight: 300;
 }
 
 /* ============================================
-   SURPRISE POPUP
+   SURPRISE POPUP - PREMIUM
    ============================================ */
 #surprisePopup {
     position: fixed;
@@ -521,11 +542,11 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeInPopup 0.5s ease;
+    animation: fadeInPopup 0.6s ease;
 }
 
 @keyframes fadeInPopup {
@@ -534,25 +555,21 @@ body {
 }
 
 .popup-content {
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-    padding: 40px;
-    border-radius: 40px;
-    max-width: 500px;
-    width: 90%;
+    background: linear-gradient(145deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+    padding: 45px;
+    border-radius: 50px;
+    max-width: 520px;
+    width: 92%;
     text-align: center;
-    animation: bounceInPopup 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 20, 147, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: bounceInPopup 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(255, 20, 147, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     position: relative;
     overflow: hidden;
-    max-height: 90vh;
+    max-height: 92vh;
     overflow-y: auto;
-}
-
-@keyframes bounceInPopup {
-    0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
-    70% { transform: scale(1.05) rotate(1deg); }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
 .popup-content::before {
@@ -562,68 +579,112 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 20, 147, 0.15), transparent 50%);
-    animation: glowMove 8s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 20, 147, 0.12), transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 215, 0, 0.06), transparent 40%);
+    animation: glowMove 10s ease-in-out infinite;
     pointer-events: none;
 }
 
+@keyframes bounceInPopup {
+    0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    70% { transform: scale(0.98); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.popup-close:hover {
+    background: rgba(255, 20, 147, 0.3);
+    transform: rotate(90deg);
+}
+
 .popup-emoji {
-    font-size: 4rem;
+    font-size: 4.5rem;
     display: block;
-    animation: bounceEmoji 1s ease-in-out infinite;
+    animation: bounceEmoji 1.5s ease-in-out infinite;
 }
 
 @keyframes bounceEmoji {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-18px); }
 }
 
 .popup-header h3 {
     color: #FFD700;
     font-weight: 700;
-    margin-top: 10px;
-    font-size: 1.8rem;
+    margin-top: 8px;
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.popup-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 5px;
+    letter-spacing: 1px;
 }
 
 .popup-photo {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
-    border: 3px solid #FFD700;
-    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+    border: 4px solid #FFD700;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
     border-radius: 50%;
     margin: 10px 0;
 }
 
 .love-message {
-    font-size: 1.2rem !important;
-    line-height: 1.8 !important;
+    font-size: 1.3rem !important;
+    line-height: 2 !important;
     color: #FFD700 !important;
     font-family: 'Dancing Script', cursive !important;
     font-weight: 400 !important;
-    margin: 15px 0 !important;
+    margin: 18px 0 !important;
 }
 
 .popup-hearts {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 15px 0;
-    animation: heartFloat 1.5s ease-in-out infinite;
+    animation: heartFloat 2s ease-in-out infinite;
 }
 
 @keyframes heartFloat {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-12px); }
 }
 
 .popup-hearts span {
     display: inline-block;
-    margin: 0 3px;
+    margin: 0 4px;
 }
+
+.popup-hearts span:nth-child(2) { animation-delay: 0.2s; }
+.popup-hearts span:nth-child(3) { animation-delay: 0.4s; }
+.popup-hearts span:nth-child(4) { animation-delay: 0.6s; }
+.popup-hearts span:nth-child(5) { animation-delay: 0.8s; }
+.popup-hearts span:nth-child(6) { animation-delay: 1.0s; }
+.popup-hearts span:nth-child(7) { animation-delay: 1.2s; }
 
 .popup-love-quote {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 12px;
+    border-radius: 20px;
+    padding: 15px;
     margin: 15px 0;
     border-left: 3px solid #FFD700;
     border-right: 3px solid #FFD700;
@@ -631,23 +692,41 @@ body {
 
 .popup-love-quote i {
     color: #FFD700;
-    opacity: 0.5;
-    font-size: 0.9rem;
+    opacity: 0.4;
+    font-size: 1rem;
 }
 
 .popup-love-quote span {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-style: italic;
-    padding: 0 8px;
+    padding: 0 10px;
+}
+
+.popup-age-badge {
+    background: linear-gradient(135deg, #FFD700, #FFE44D);
+    padding: 8px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 10px 0;
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+}
+
+.popup-age-badge span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .popup-content .btn-love {
-    margin-top: 10px;
+    margin-top: 15px;
+    padding: 14px 40px;
+    font-size: 1rem;
 }
 
 /* ============================================
-   BALLOONS
+   BALLOONS - PREMIUM
    ============================================ */
 .balloons {
     position: fixed;
@@ -661,16 +740,16 @@ body {
 
 .balloon {
     position: absolute;
-    font-size: 3.5rem;
-    animation: balloonFloat 10s ease-in-out infinite;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+    font-size: 4rem;
+    animation: balloonFloat 12s ease-in-out infinite;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.2));
 }
 
-.balloon-1 { left: 3%; animation-delay: 0s; }
-.balloon-2 { left: 18%; animation-delay: 1.5s; }
-.balloon-3 { right: 18%; animation-delay: 3s; }
-.balloon-4 { right: 3%; animation-delay: 4.5s; }
-.balloon-5 { left: 50%; animation-delay: 2.5s; }
+.balloon-1 { left: 2%; animation-delay: 0s; }
+.balloon-2 { left: 15%; animation-delay: 1.8s; }
+.balloon-3 { left: 30%; animation-delay: 3.6s; }
+.balloon-4 { right: 30%; animation-delay: 0.9s; }
+.balloon-5 { right: 15%; animation-delay: 2.7s; }
 
 @keyframes balloonFloat {
     0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
@@ -693,7 +772,7 @@ body {
 }
 
 /* ============================================
-   NOTIFICATION
+   NOTIFICATION - PREMIUM
    ============================================ */
 .notification {
     position: fixed;
@@ -703,20 +782,21 @@ body {
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(20px);
     color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
+    padding: 18px 40px;
+    border-radius: 60px;
     z-index: 10000;
     font-family: 'Poppins', sans-serif;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-    animation: slideUpNotif 0.5s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
-    max-width: 90%;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUpNotif 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+    max-width: 92%;
     text-align: center;
+    font-weight: 300;
 }
 
 @keyframes slideUpNotif {
-    from { transform: translateX(-50%) translateY(100px); opacity: 0; }
+    from { transform: translateX(-50%) translateY(120px); opacity: 0; }
     to { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
@@ -724,29 +804,37 @@ body {
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
-    .birthday-title { font-size: 2.8rem; }
+    .birthday-title { font-size: 3rem; }
     .special-name { font-size: 2rem; }
-    .photo-profile { width: 130px; height: 130px; }
-    .countdown-number { font-size: 1.6rem; }
-    .btn-primary, .btn-love { padding: 12px 25px; font-size: 0.9rem; width: 100%; margin-right: 0 !important; }
+    .photo-profile { width: 140px; height: 140px; }
+    .countdown-number { font-size: 1.8rem; }
+    .btn-primary, .btn-love { 
+        padding: 14px 25px; 
+        font-size: 0.85rem; 
+        width: 100%; 
+        margin-right: 0 !important; 
+    }
     .button-group { display: flex; flex-direction: column; gap: 12px; }
-    .balloon { font-size: 2.5rem; }
-    .popup-content { padding: 25px 20px; }
+    .balloon { font-size: 3rem; }
+    .popup-content { padding: 30px 20px; }
     .message-text { font-size: 0.95rem; }
-    .photo-caption { font-size: 0.6rem; padding: 3px 15px; bottom: -20px; }
-    .love-quote span { font-size: 0.75rem; }
-    .popup-emoji { font-size: 3rem; }
-    .popup-header h3 { font-size: 1.4rem; }
-    .love-message { font-size: 1rem !important; }
+    .photo-caption { font-size: 0.65rem; padding: 4px 18px; bottom: -22px; }
+    .love-quote span { font-size: 0.8rem; }
+    .popup-emoji { font-size: 3.5rem; }
+    .popup-header h3 { font-size: 1.6rem; }
+    .love-message { font-size: 1.1rem !important; }
+    .popup-photo { width: 100px; height: 100px; }
 }
 
 @media (max-width: 480px) {
-    .birthday-title { font-size: 2.2rem; }
+    .birthday-title { font-size: 2.4rem; }
     .special-name { font-size: 1.6rem; }
-    .countdown-number { font-size: 1.3rem; }
-    .countdown-box { padding: 10px 3px; }
-    .photo-profile { width: 100px; height: 100px; }
-    .age-number { font-size: 1.6rem; }
+    .countdown-number { font-size: 1.4rem; }
+    .countdown-box { padding: 12px 3px; }
+    .photo-profile { width: 110px; height: 110px; }
+    .age-number { font-size: 1.8rem; }
     .popup-photo { width: 80px; height: 80px; }
-    .popup-hearts { font-size: 1.5rem; }
+    .popup-hearts { font-size: 1.6rem; }
+    .popup-content { padding: 25px 15px; }
+    .notification { font-size: 0.8rem; padding: 12px 20px; }
 }
