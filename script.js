@@ -6,10 +6,10 @@ const CONFIG = {
     namaSpesial: "Sayangku ❤️",
     
     // Tanggal ulang tahun (YYYY-MM-DDTHH:mm:ss)
-    tanggalUlangTahun: "2026-08-10T00:00:00",
+    tanggalUlangTahun: "2026-10-27T00:00:60",
     
     // Usia yang dirayakan
-    usia: 22,
+    usia: 17,
     
     // Pesan ucapan utama
     pesanUcapan: "Di hari spesial ini, aku ingin kamu tahu betapa berartinya kamu bagiku. Setiap detik bersamamu adalah hadiah terindah. Semoga semua impianmu menjadi kenyataan. I love you! 💕",
