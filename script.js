@@ -37,9 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🎂 Usia: 17 tahun');
     console.log('📅 27 Oktober 2026');
     
-    /* ============================================
-       SET DATA
-       ============================================ */
+    /* ===== SET DATA ===== */
     const namaElement = document.getElementById('namaSpesial');
     const pesanElement = document.getElementById('pesanUcapan');
     const ageElement = document.getElementById('ageDisplay');
@@ -48,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pesanElement) pesanElement.textContent = CONFIG.pesanUcapan;
     if (ageElement) ageElement.textContent = CONFIG.usia;
 
-    /* ============================================
-       COUNTDOWN
-       ============================================ */
+    /* ===== COUNTDOWN ===== */
     function updateCountdown() {
         const targetDate = new Date(CONFIG.tanggalUlangTahun).getTime();
         const now = new Date().getTime();
@@ -85,9 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    /* ============================================
-       MUSIC
-       ============================================ */
+    /* ===== MUSIC ===== */
     let isMusicPlaying = false;
     const audio = document.getElementById('birthdaySong');
     const musicBtnText = document.getElementById('musicBtnText');
@@ -121,9 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    /* ============================================
-       SURPRISE - SPEKTAKULER
-       ============================================ */
+    /* ===== SURPRISE ===== */
     window.showSurprise = function() {
         const popup = document.getElementById('surprisePopup');
         const surpriseMessage = document.getElementById('surpriseMessage');
@@ -143,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.display = 'block';
         document.body.style.overflow = 'hidden';
         
-        // Massive confetti - 15 bursts
+        // Massive confetti
         for (let i = 0; i < 15; i++) {
             setTimeout(function() { 
                 fireLoveConfetti(); 
@@ -153,9 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showNotification('💖 Kejutan cinta untuk Chelsi! Semoga kamu suka sayang! 💕');
     };
 
-    /* ============================================
-       CLOSE SURPRISE
-       ============================================ */
+    /* ===== CLOSE SURPRISE ===== */
     window.closeSurprise = function() {
         const popup = document.getElementById('surprisePopup');
         if (popup) {
@@ -165,13 +155,11 @@ document.addEventListener('DOMContentLoaded', function() {
         showNotification('💝 Aku selalu mencintaimu Chelsi! 💝');
     };
 
-    /* ============================================
-       CONFETTI
-       ============================================ */
+    /* ===== CONFETTI ===== */
     function fireLoveConfetti() {
         if (typeof confetti !== 'function') return;
         
-        const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF0040', '#FF6B6B', '#FFB6C1', '#FFE4E1', '#FF4500', '#FF6348'];
+        const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF0040', '#FF6B6B', '#FFB6C1', '#FFE4E1', '#FF4500'];
         
         try {
             confetti({
@@ -208,9 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch(e) {}
     }
 
-    /* ============================================
-       NOTIFICATION
-       ============================================ */
+    /* ===== NOTIFICATION ===== */
     function showNotification(message) {
         const oldNotification = document.querySelector('.notification');
         if (oldNotification) oldNotification.remove();
@@ -229,9 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     }
 
-    /* ============================================
-       AUTO CONFETTI
-       ============================================ */
+    /* ===== AUTO CONFETTI ===== */
     setTimeout(function() {
         fireLoveConfetti();
         setTimeout(function() { fireLoveConfetti(); }, 500);
@@ -240,17 +224,13 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() { fireLoveConfetti(); }, 2000);
     }, 500);
     
-    /* ============================================
-       AUTO MUSIC
-       ============================================ */
+    /* ===== AUTO MUSIC ===== */
     document.addEventListener('click', function initAudio() {
         if (audio) audio.play().catch(function() {});
         document.removeEventListener('click', initAudio);
     }, { once: true });
     
-    /* ============================================
-       CHECK BIRTHDAY
-       ============================================ */
+    /* ===== CHECK BIRTHDAY ===== */
     function checkBirthdayToday() {
         const today = new Date();
         const birthday = new Date(CONFIG.tanggalUlangTahun);
@@ -265,9 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     checkBirthdayToday();
 
-    /* ============================================
-       KEYBOARD SHORTCUTS
-       ============================================ */
+    /* ===== KEYBOARD ===== */
     document.addEventListener('keydown', function(e) {
         if (e.key === ' ' || e.key === 'Space') {
             e.preventDefault();
